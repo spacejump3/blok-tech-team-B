@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="nl">
+<%- include ('../view/partials/head') %>
+
+<body>
+<%- include ('../view/partials/header') %>
+
+<main>
+    <form action="result" method="post">
+
+        <section>
+            <h1>Find your perfect adoptable match!</h1>
+        </section>    
+
+        <section>
+            <h2>I'm looking for a...</h2>
+            <ul>
+                <li><input class="box" type="radio" name ="soort" id="cat" value="cat">
+                    <label for="cat">Cat</label>
+                </li>
+
+                <li><input class="box" type="radio" name ="soort" id="dog" value="dog">
+                    <label for="dog">Dog</label>
+                </li>
+
+                <li><input class="box" type="radio" name ="soort" id="bunny" value="bunny">
+                    <label for="bunny">Bunny</label>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>The age must be...</h2>
+            <ul>
+                <li><input class="box" type="radio" name="age" id="0-2" value="0-2"/>
+                    <label for="0-2">0 to 2 years</label>
+                </li>
+
+                <li><input class="box" type="radio" name="age"  id="2-5" value="2-5"/>
+                    <label for="2-5">2 to 5+ years</label>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+           <h2>I want the pet to be...</h2>
+            <p class="ondertekst">(multiple answers are possible)</p>
+            <ul>
+                <li><input class="box" type="checkbox" name="trait" id="inquisitive" value="inquisitive"/>
+                    <label for="inquisitive">inquisitive</label>
+                </li>
+
+                <li><input class="box" type="checkbox" name="trait" id="playful" value="playful"/>
+                    <label for="playful">playful</label>
+                </li>
+
+                <li><input class="box" type="checkbox" name="trait" id="friendly" value="friendly"/>
+                    <label for="friendly">friendly</label>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <button type="submit" id="submit" name="submit">see my PawfectMatch!</button>
+        </section>
+
+    </form>    
+    </main>
+    <script src="../static/custom.js"></script>
+</body>
+</html>
