@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="nl">
+    
+<%- include ('../view/partials/head') %>
+
+<body>
+<%- include ('../view/partials/header') %>
+
+<!-- het dier wordt weergegevn wat er bij past -->
+<main>
+    <div class="results">
+    <% resultPet.forEach((pet) => { %>
+    <div class="info"><img class="petpicture" src=" <%= pet.photo %>" alt="photo of a pet" />
+       <div><h2><%= pet.name %></h2>
+            <h2><%= pet.age %></h2>
+            <h2><%= pet.soort %></h2>
+            <h2><%= pet.trait %></h2></div></div>
+    <% }) %>
+
+    <a href="http://localhost:4000/"><button>Retake!</button></a>
+    </div>
+    </main>
+    <script src="../index.js"></script>
+
+</body>
+</html>
