@@ -28,6 +28,10 @@ client.connect(err => {
     client.close()
   });
 
+// routes
+const postRoutes = require('./routes/post.js')
+app.use('/post', postRoutes)
+
 // import ejs view engine 
 app.set('view engine', 'ejs')
 
