@@ -23,24 +23,17 @@ const animal = database.collection('pets')
 // connecting a specific datbase with the collection form
 client.connect(err => {
     const collection = client.db("testdatab").collection("form")
-// when the connection fails, show error
+    // when the connection fails, show error
     console.log('error')
     client.close()
-  });
-
-// routes
-const postRoutes = require('./routes/post.js')
-app.use('/post', postRoutes)
-
-const resultRoutes = require('./routes/result.js')
-app.use('/result', resultRoutes)
+});
 
 
 // import ejs view engine 
 app.set('view engine', 'ejs')
 
 // express middleware to help with HTTP requests for node.js
-app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({ extended: true }))
 
 // express uses the map static to 
 app.use('/static/', express.static('./static'))
@@ -52,14 +45,21 @@ app.set('views', 'view')
 // calling ejs and returning in html
 app.get('/', function(req, res) {
     res.render('index.ejs')
-  })
-  
+})
+
+// routes
+const postRoutes = require('./routes/post.js')
+app.use('/post', postRoutes)
+
+const resultRoutes = require('./routes/result.js')
+app.use('/result', resultRoutes)
+
 // 4000 shows in the console to let know it works
-  app.listen(port, () => {
+app.listen(port, () => {
     console.log(`Server listening on port ${port}`)
-  })
+})
 
 // when an user is calling an unknow url, an error occurs
-  app.use(function (req, res, next) {
+app.use(function(req, res, next) {
     res.status(404).render('404page')
 })
