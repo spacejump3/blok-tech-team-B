@@ -8,13 +8,13 @@ exports.loadResults = async (req, res, next) => {
             trait: req.body.trait
         }
 
-        await submission.insertOne(petList)
+        await req.app.get('database').collection('submission').insertOne(petList)
 
         // to check if the servers connects and if the data is incorperated correctly
         console.log(req.body)
 
         // based on the answers the user will be paired with an animal
-        let resultPet = await animal.find({
+        let resultPet = await req.app.get('database').collection('pets').find({
             $and: [
                 { soort: req.body.soort },
                 { age: req.body.age },

@@ -28,6 +28,8 @@ client.connect(err => {
     client.close()
 });
 
+app.set('database', client.db(dbName))
+
 
 // import ejs view engine 
 app.set('view engine', 'ejs')
