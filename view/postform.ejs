@@ -6,7 +6,36 @@
 <%- include ('../view/partials/header') %>
 
     <main>
-    
+        <h1>Post an animal</h1>
+        <form action="">
+            
+            <label for="name">Animal Name</label>
+            <input type="text" name="name" id="animal_name">
+
+            <div class="file-input">
+                <div class="image-list"></div>
+                <input type="file" name="images" id="images" multiple accept="image/*" required>
+            </div>
+
+            <label for="age">Animal Age</label>
+            <input type="number" name="age" id="age" min="0">
+
+            <label for="species">Species</label>
+            <select name="species" id="species" required>
+                <option disabled selected>choose...</option>
+                <option value="cat">cat</option>
+                <option value="dog">dog</option>
+                <option value="bunny">bunny</option>
+            </select>
+
+            <label>Traits</label>
+            <input type="checkbox" name="trait" value="inquisitive" id="inquisitive"><label for="inquisitive">inquisitive</label>
+            <input type="checkbox" name="trait" value="playful" id="playful"><label for="playful">playful</label>
+            <input type="checkbox" name="trait" value="friendly" id="friendly"><label for="friendly">friendly</label>
+
+            <input type="submit">
+
+        </form>
     </main>
 
 </body>
