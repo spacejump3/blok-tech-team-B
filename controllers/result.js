@@ -8,7 +8,7 @@ exports.loadResults = async (req, res) => {
             trait: req.body.trait
         }
 
-        await req.app.get('database').collection('submission').insertOne(petList)
+        await req.app.get('database').collection('submission').insertOne(petList) //https://stackoverflow.com/a/25670767
 
         // based on the answers the user will be paired with an animal
         let resultPet = await req.app.get('database').collection('pets').find({

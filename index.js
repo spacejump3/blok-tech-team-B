@@ -22,7 +22,7 @@ client.connect(err => {
     console.log('error')
 });
 
-app.set('database', client.db(dbName))
+app.set('database', client.db(dbName)) //https://stackoverflow.com/a/25670767
 
 
 // import ejs view engine 
