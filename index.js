@@ -15,17 +15,11 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = process.env.MONGODB_URI
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 })
 const dbName = 'testdatab'
-const database = client.db(dbName);
-const submission = database.collection('form')
-const animal = database.collection('pets')
-
 
 // connecting a specific datbase with the collection form
 client.connect(err => {
-    const collection = client.db("testdatab").collection("form")
     // when the connection fails, show error
     console.log('error')
-    client.close()
 });
 
 app.set('database', client.db(dbName))
@@ -44,9 +38,9 @@ app.use('/static/', express.static('./static'))
 app.set('views', 'view')
 
 // all pages
-// calling ejs and returning in html
+// home
 app.get('/', function(req, res) {
-    res.render('index.ejs')
+    res.render('index')
 })
 
 // routes

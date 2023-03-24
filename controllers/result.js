@@ -1,6 +1,6 @@
 // the data from the form will be showed in mongodb whenever someone fills in the form
 
-exports.loadResults = async (req, res, next) => {
+exports.loadResults = async (req, res) => {
     try {
         const petList = {
             soort: req.body.soort,
@@ -9,9 +9,6 @@ exports.loadResults = async (req, res, next) => {
         }
 
         await req.app.get('database').collection('submission').insertOne(petList)
-
-        // to check if the servers connects and if the data is incorperated correctly
-        console.log(req.body)
 
         // based on the answers the user will be paired with an animal
         let resultPet = await req.app.get('database').collection('pets').find({
