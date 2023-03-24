@@ -99,8 +99,31 @@ app.post('/result', async (req, res, next) => {
     } catch (err) {
         console.log(err.stack)
     }
-    
 })
+
+app.post('/favorited', async (req, res) => {
+    const favoritePet = req.body.favorite;
+    console.log(favoritePet);
+
+    const filter = { name: favoritePet };
+
+    const updatePet = { $set: { liked: true } };
+
+    const update = await animal.updateOne(filter, updatePet);
+
+    res.render('favorited', { favoritePet });
+});
+
+app.get('/favorites', async (req, res) => {
+    const query = { liked: true };
+
+    const cursor = animal.find(query);
+
+    const favorites = await cursor.toArray();
+    console.log(favorites);
+
+    res.render('favorites', { favorites });
+});
 
   
 // 4000 shows in the console to let know it works
