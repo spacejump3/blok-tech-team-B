@@ -50,6 +50,9 @@ app.use('/post', postRoutes)
 const resultRoutes = require('./routes/result.js')
 app.use('/result', resultRoutes)
 
+const resultRoutes = require('./routes/login.js')
+app.use('/login', loginRoutes)
+
 // 4000 shows in the console to let know it works
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`)
