@@ -1,6 +1,11 @@
 /* fonts */
 @import url('https://fonts.cdnfonts.com/css/yusei-magic');
 
+@font-face {
+    font-family: Recky;
+    src: url("/Fonts/quickravageregular.otf") format("opentype");
+}
+
 /* general */
 :root {
     --header-height: 3.5em;
