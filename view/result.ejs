@@ -10,7 +10,7 @@
 <main>
     <div class="results">
     <% resultPet.forEach((pet) => { %>
-    <div class="info"><img class="petpicture" src=" <%= pet.photo %>" alt="photo of a pet" />
+    <div class="info"><img class="petpicture" src="<%= pet.photo %>" alt="photo of a pet" />
        <div><h2><%= pet.name %></h2>
             <h2><%= pet.age %></h2>
             <h2><%= pet.soort %></h2>
@@ -23,7 +23,6 @@
     <a href="http://localhost:4000/"><button>Retake!</button></a>
     </div>
     </main>
-    <script src="../index.js"></script>
 
 </body>
 </html>
