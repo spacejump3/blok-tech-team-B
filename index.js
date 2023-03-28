@@ -12,9 +12,9 @@ const port = 4000
 
 // connecting mongoDB account with database 
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = 'mongodb+srv://lisafokkinga:BXFwEgGb4vPlizZY@rocketfinderz.sho999c.mongodb.net/?retryWrites=true&w=majority'
+const uri = process.env.MONGODB_URI
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 })
-const dbName = 'Test'
+const dbName = 'testdatab'
 
 // connecting a specific datbase with the collection form
 client.connect(err => {
