@@ -54,6 +54,8 @@ app.use('/login', require('./routes/login.js'))
 
 app.use('/register', require('./routes/register.js'))
 
+app.use('/profile', require('./routes/profile.js'))
+
 // 4000 shows in the console to let know it works
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`)

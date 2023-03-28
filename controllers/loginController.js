@@ -21,7 +21,7 @@ exports.inloggen = async (req, res) => {
     if (!userValidation) {
       res.send('geen gebruiker gevonden')
     } else {
-      res.send('ingelogd...')
+      res.redirect('/profile')
     }
   } catch (err) {
     console.log(err)

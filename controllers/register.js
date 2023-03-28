@@ -27,7 +27,7 @@ exports.accountAanmaken = async (req, res) => {
             password: password_filled
         }
         await req.app.get('database').collection('users').insertOne(newUser)
-        res.send('gebruiker geregistreerd')
+        res.redirect('/profile')
     } catch (err) {
         console.log(err)
     }
