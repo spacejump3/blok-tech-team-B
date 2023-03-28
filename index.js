@@ -12,9 +12,9 @@ const port = 4000
 
 // connecting mongoDB account with database 
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = process.env.MONGODB_URI
+const uri = 'mongodb+srv://lisafokkinga:BXFwEgGb4vPlizZY@rocketfinderz.sho999c.mongodb.net/?retryWrites=true&w=majority'
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 })
-const dbName = 'testdatab'
+const dbName = 'Test'
 
 // connecting a specific datbase with the collection form
 client.connect(err => {
@@ -50,8 +50,7 @@ app.use('/post', postRoutes)
 const resultRoutes = require('./routes/result.js')
 app.use('/result', resultRoutes)
 
-const resultRoutes = require('./routes/login.js')
-app.use('/login', loginRoutes)
+app.use('/login', require('./routes/login.js'))
 
 // 4000 shows in the console to let know it works
 app.listen(port, () => {
