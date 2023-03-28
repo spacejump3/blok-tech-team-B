@@ -1,9 +1,9 @@
 exports.favorites = async (req, res) => {
     const query = { liked: true };
 
-    const cursor = dbName.find(query);
+    const cursor = await req.app.get('database').collection('pets').find(query);
 
     const favorites = await cursor.toArray();
 
-    res.render('/view/favorites', { favorites });
+    res.render('favorites', { favorites });
 };
