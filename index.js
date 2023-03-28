@@ -44,6 +44,12 @@ app.get('/', function(req, res) {
 })
 
 // routes
+const likeAnimal = require('./routes/like.js')
+app.use('/favorited', likeAnimal)
+
+const favorites = require('./routes/favorites.js')
+app.use('/favorites', favorites)
+
 const postRoutes = require('./routes/post.js')
 app.use('/post', postRoutes)
 
