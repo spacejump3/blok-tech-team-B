@@ -1,6 +1,7 @@
 const {
   Db
 } = require("mongodb")
+const session = require('express-session')
 
 exports.inlogPagina = (req, res) => {
   res.render('login.ejs')
@@ -9,19 +10,19 @@ exports.inlogPagina = (req, res) => {
 exports.inloggen = async (req, res) => {
   try {
     const email_filled = req.body.email.toLowerCase()
-    const password_filled = req.body.wachtwoord.toLowerCase()
+    const password_filled = req.body.wachtwoord
 
     const userValidation = await req.app.get('database').collection('users').findOne({
       email: email_filled,
-      password: password_filled
+      password: password_filled,
     })
 
-    console.log(userValidation)
-
-    if (!userValidation) {
-      res.send('geen gebruiker gevonden')
+    if(userValidation) {
+      req.session.userid = userValidation._id
+      req.session.save()
+      res.redirect('/profile')
     } else {
-      res.send('ingelogd...')
+      res.redirect('/login')
     }
   } catch (err) {
     console.log(err)

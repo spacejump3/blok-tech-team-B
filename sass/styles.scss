@@ -114,7 +114,7 @@ form input::placeholder {
     color: #e0815e;
 }
 
-form input[type=submit] {
+form input[type=submit], .profiel form input[type=submit] {
     background-color: #e0815e;
     color: white;
     font-family: "Recky";
@@ -122,10 +122,10 @@ form input[type=submit] {
     font-size: 1em;
     margin-top: 1em;
     border-radius: 5px;
-    text-transform: uppercase ;
+    text-transform: uppercase;
     cursor: pointer;
+    border: none;
 }
-
 
 section:nth-of-type(1) {
     display: flex;
@@ -254,6 +254,15 @@ main button {
     background-size: cover;
 }
 
+.profiel main {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-direction: column;
+
+    height: calc(100vh - var(--header-height));
+    overflow-y: hidden;
+}
 .login main div:first-of-type , .register main div:first-of-type {
     display: flex;
     flex-direction: column;
@@ -299,4 +308,51 @@ main button {
 .register main div:first-of-type p,
 .register main div:first-of-type p > a  {
     font-family: var(--font-family);
+}
+
+
+// mijn profiel
+.profiel h1 {
+    font-size: 3em;
+    font-weight: 400;
+    color: #e0815e;
+}
+
+.profiel div:first-of-type {
+    display: flex;
+    gap: 3em;
+    align-items: center;
+    justify-content: center;
+}
+
+.profiel div:first-of-type > img {
+    border-radius: 10em;
+}
+
+.profiel form {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+}
+
+.profiel form label {
+    font-size: 1.2em;
+    color: black;
+    text-transform: uppercase;
+    font-family: "Recky";
+}
+
+.profiel form input {
+    color: #e0815e;
+    font-family: var(--font-family);
+    background-color: transparent;
+    margin-bottom: 0.5em;
+    font-size: 1em;
+    border: none;
+    border-bottom: 0.3em solid white;
+}
+
+.profiel > main > a {
+    margin-top: 2em;
 }
