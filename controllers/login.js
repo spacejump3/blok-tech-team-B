@@ -10,7 +10,7 @@ exports.inlogPagina = (req, res) => {
 exports.inloggen = async (req, res) => {
   try {
     const email_filled = req.body.email.toLowerCase()
-    const password_filled = req.body.wachtwoord.toLowerCase()
+    const password_filled = req.body.wachtwoord
 
     const userValidation = await req.app.get('database').collection('users').findOne({
       email: email_filled,
