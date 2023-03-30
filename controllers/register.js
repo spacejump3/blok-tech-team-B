@@ -20,7 +20,7 @@ exports.accountAanmaken = async (req, res) => {
             ]
         })
         if (userValidation) {
-            return res.status(409).send('Gebruiker bestaat al');
+            return res.status(409).redirect('/error');
         }
 
 // als de gebruiker niet bestaat, voeg dan de nieuwe gebruiker toe aan de database 
