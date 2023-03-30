@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="nl">
+<%- include ('../view/partials/head') %>
+
+<body class="profiel">
+    <%- include ('../view/partials/header') %>
+
+    <main>
+        <section>
+            <h1>WELKOM OP  <%= req.session.user.username %> PROFIEL</h1>
+        </section>
+        <div>
+            <div>
+                <img src="">
+            </div>
+            <form method="post" action="">
+                <label for="id">Gebruikersnaam</label>
+                <input required type="text" value="" id="id" name="username" placeholder="vul hier je wachtwoord in">
+
+                <label for="id">E-mail</label>
+                <input required type="mail" value="" id="id" name="email" placeholder="vul hier je email adres in">
+
+                <label for="id">Wachtwoord</label>
+                <input required type="text" value="" id="id" name="wachtwoord" placeholder="vul hier je wachtwoord in">
+
+                <input type="submit" value="bewerken opslaan">
+            </form>
+        </div>
+        <a href="">Uitloggen</a>
+    </main>
+</body>
+
+</html>
