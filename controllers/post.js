@@ -9,10 +9,10 @@ exports.submit = async (req, res) => {
         let newPet = {
             _id: req.files[0].destination.split('/').at(-1),
             date: new Date(),
-            age: req.body.age,
-            name: req.body.name,
-            species: req.body.species,
-            trait: req.body.trait,
+            age: xss(req.body.age),
+            name: xss(req.body.name),
+            species: xss(req.body.species),
+            trait: xss(req.body.trait),
             liked: false,
             comments: []
         }
