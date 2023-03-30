@@ -1,3 +1,5 @@
+const xss = require('xss')
+
 exports.postForm = (req, res) => {
     res.render('postform')
 }
