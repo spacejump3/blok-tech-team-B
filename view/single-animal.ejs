@@ -18,15 +18,6 @@
         <textarea name="" id="" cols="10" rows="5"></textarea>
         <button type="submit">submit comment</button>
     </form>
-    <ul>
-        <% comments.forEach(comment => { %>
-          <li>
-            <strong><%= comment.name %></strong>
-            <span><%= comment.timestamp.toLocaleString() %></span>
-            <p><%= comment.comment %></p>
-          </li>
-        <% }); %>
-      </ul>
 </main>
 </body>
 </html>
