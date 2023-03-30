@@ -18,9 +18,9 @@ exports.inloggen = async (req, res) => {
     })
 
     if (userValidation) {
-      req.session.user = user
+      req.session.userValidation = user
       // de gebruiker is gevonden de sessie word nu gestart voor de gebruiker
-      console.log(req.session.user)
+      console.log(req.session.userValidation)
 
       // de gebruiker word nu gestuurd naar mijn profiel route
       res.redirect('/profile')
