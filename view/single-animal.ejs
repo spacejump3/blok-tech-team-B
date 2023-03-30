@@ -12,16 +12,21 @@
     <h2><%= resultPet.age %></h2>
     <h2><%= resultPet.soort %></h2>
     <h2><%= resultPet.trait %></h2>
-    <form action="submit">
+    <form method="post">
         <h2>Comment section</h2>
         <label for="comment">Comment</label>
         <textarea name="" id="" cols="10" rows="5"></textarea>
         <button type="submit">submit comment</button>
     </form>
-    <div class="comment-section">
-        <h3></h3>
-        <p></p>
-    </div>
+    <ul>
+        <% comments.forEach(comment => { %>
+          <li>
+            <strong><%= comment.name %></strong>
+            <span><%= comment.timestamp.toLocaleString() %></span>
+            <p><%= comment.comment %></p>
+          </li>
+        <% }); %>
+      </ul>
 </main>
 </body>
 </html>

@@ -15,6 +15,33 @@ exports.loadSingleAnimal = async (req, res) => {
     }
 }
 
+app.post('/single-animal', function (req, res) => {
+    const collection = db.collection('comments')
+    const comment = {
+        name: req.body.name,
+        email: req.body.email,
+        comment: req.body.comment,
+        timestamp: new Date()
+    }
+    collection.insertOne(comment, (err) => {
+        if (err) {
+            console.error(err)
+            return
+        }
+    })
+})
+
+app.get('/', (req, res) => {
+    const collection = db.collection('comments')
+    collection.find().sort({ timestamp: -1 }).toArray((err, comments) => {
+      if (err) {
+        console.error(err)
+        return
+      }
+      res.render('index', { comments })
+    })
+  })
+
 exports.loadResults = async (req, res) => {
     try {
         const petList = {
