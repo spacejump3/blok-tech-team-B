@@ -12,15 +12,18 @@ exports.accountAanmaken = async (req, res) => {
         const email_filled = req.body.email.toLowerCase()
         const password_filled = req.body.wachtwoord.toLowerCase()
 
-        // controleer of de gebruiker al bestaat in de database 
+// controleer of de gebruiker al bestaat in de database 
         const userValidation = await req.app.get('database').collection('users').findOne({
-            email: email_filled
+            $or: [
+                { username: username_filled },
+                { email: email_filled }
+            ]
         })
         if (userValidation) {
-            res.send('gebruiker bestaat al')
+            return res.status(409).send('Gebruiker bestaat al');
         }
 
-        // als de gebruiker niet bestaat, voeg dan de nieuwe gebruiker toe aan de database 
+// als de gebruiker niet bestaat, voeg dan de nieuwe gebruiker toe aan de database 
         const newUser = {
             username: username_filled,
             email: email_filled,
