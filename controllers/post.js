@@ -6,8 +6,11 @@ exports.postForm = (req, res) => {
 
 exports.submit = async (req, res) => {
     try {
+
+        let id = req.files[0].destination.split('/').at(-1)
+
         let newPet = {
-            _id: req.files[0].destination.split('/').at(-1),
+            _id: id,
             date: new Date(),
             age: xss(req.body.age),
             name: xss(req.body.name),
@@ -17,7 +20,10 @@ exports.submit = async (req, res) => {
             comments: []
         }
 
-        console.log(newPet)
+        await req.app.get('database').collection('pets').insertOne(newPet)
+
+        res.redirect(`/result/${id}`)
+
     } catch (err) {
         console.log(err.stack)
     }
