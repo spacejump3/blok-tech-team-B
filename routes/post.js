@@ -10,8 +10,6 @@ const storage = multer.diskStorage({
 
 		let id = new ObjectId()
 
-		console.log(id.to)
-
 		if(!fs.existsSync(`static/upload/${id}`)) {
 			fs.mkdirSync(`static/upload/${id}`, { recursive: true });
 		}
