@@ -20,6 +20,10 @@ a {
     text-decoration: none;
 }
 
+h1, h2, h3, h4 {
+    font-family: "Recky", sans-serif;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -28,7 +32,6 @@ a {
 
 body {
     background-color: var(--background-color);
-    height: 60em;
 }
 
 /* header styling */
@@ -86,14 +89,43 @@ header {
 /* index.ejs main styling */
 
 form {
-    background-color: rgb(255, 255, 255);
-    margin-top: 6em;
-    max-width: 40em;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 2em;
-    border: 0.3em solid #ebeaea;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 75%;
 }
+
+form label {
+    font-size: 1.2em;
+    color: white;
+    font-family: "Recky";
+}
+
+form input {
+    color: #e0815e;
+    font-family: var(--font-family);
+    background-color: #fef2ca;
+    margin-bottom: .5em;
+    font-size: 1em;
+    border-radius: 5px;
+}
+
+form input::placeholder {
+    color: #e0815e;
+}
+
+form input[type=submit] {
+    background-color: #e0815e;
+    color: white;
+    font-family: "Recky";
+    padding: .5em;
+    font-size: 1em;
+    margin-top: 1em;
+    border-radius: 5px;
+    text-transform: uppercase ;
+    cursor: pointer;
+}
+
 
 section:nth-of-type(1) {
     display: flex;
@@ -193,3 +225,78 @@ main button {
 //     margin-top: 2em;
 //     margin-left: 1em;
 // }
+
+// Inloggen 
+
+.login main{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+
+    height: calc(100vh - var(--header-height));
+    overflow-y: hidden;
+    background-image: url(../static/images/katbg.png) ;
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.register main{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+
+    height: calc(100vh - var(--header-height));
+    overflow-y: hidden;
+    background-image: url(../static/images/dogbg1.jpg) ;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login main div:first-of-type , .register main div:first-of-type {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login main div:first-of-type section , .register main div:first-of-type section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login main div:first-of-type section > h1 , .register main div:first-of-type section > h1 {
+    font-size: 3.3em;
+    color: #e0815e;
+
+}
+
+.login main div:first-of-type section > h2 , .register main div:first-of-type section > h2{
+    font-size: 2.8em;
+    font-family: "Recky", sans-serif;
+    color: white;
+    margin-bottom: 1em;
+}
+
+.login > form , .register > form {
+    height: 50%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.login main div:first-of-type p , .register main div:first-of-type p {
+    color: white;
+}
+
+.login main div:first-of-type p > a , .register main div:first-of-type p > a{
+    color: #e0815e;
+}
+
+.login main div:first-of-type p,
+.login main div:first-of-type p > a ,
+.register main div:first-of-type p,
+.register main div:first-of-type p > a  {
+    font-family: var(--font-family);
+}
