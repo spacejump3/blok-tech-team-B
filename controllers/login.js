@@ -18,8 +18,8 @@ exports.inloggen = async (req, res) => {
     })
 
     if (userValidation) {
-      // de gebruiker word nu gestuurd naar mijn profiel route
       res.redirect('/profile')
+      console.log(userValidation)
     } else {
       res.redirect('/login')
     }
