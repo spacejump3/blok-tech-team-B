@@ -20,17 +20,18 @@ exports.accountAanmaken = async (req, res) => {
             ]
         })
         if (userValidation) {
-            return res.status(409).redirect('/error');
+            res.render('error.ejs');
         }
-
-// als de gebruiker niet bestaat, voeg dan de nieuwe gebruiker toe aan de database 
-        const newUser = {
-            username: username_filled,
-            email: email_filled,
-            password: password_filled
+// als de gebruiker niet bestaat, voeg dan de nieuwe gebruiker toe aan de database
+        else {
+            const newUser = {
+                username: username_filled,
+                email: email_filled,
+                password: password_filled
+            }
+            await req.app.get('database').collection('users').insertOne(newUser)
+            res.redirect('/profile')
         }
-        await req.app.get('database').collection('users').insertOne(newUser)
-        res.redirect('/profile')
     } catch (err) {
         console.log(err)
     }
