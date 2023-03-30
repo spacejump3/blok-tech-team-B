@@ -127,7 +127,6 @@ form input[type=submit], .profiel form input[type=submit] {
     border: none;
 }
 
-
 section:nth-of-type(1) {
     display: flex;
     justify-content: center;
@@ -264,7 +263,6 @@ main button {
     height: calc(100vh - var(--header-height));
     overflow-y: hidden;
 }
-
 .login main div:first-of-type , .register main div:first-of-type {
     display: flex;
     flex-direction: column;
@@ -311,6 +309,7 @@ main button {
 .register main div:first-of-type p > a  {
     font-family: var(--font-family);
 }
+
 
 // mijn profiel
 .profiel h1 {
