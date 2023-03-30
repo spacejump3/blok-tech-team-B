@@ -16,10 +16,6 @@ exports.inloggen = async (req, res) => {
       email: email_filled,
       password: password_filled,
     })
-    
-    const user = await req.app.get('database').collection('users').findOne({
-      _id: req.body.id
-    })
 
     if (userValidation) {
       req.session.user = user
