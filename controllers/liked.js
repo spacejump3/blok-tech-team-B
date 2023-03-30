@@ -6,7 +6,7 @@ exports.like = async (req, res) => {
 
     const updateDocument = { $set: { liked: true} };
 
-    const update = await animals.updateOne(filter, updateDocument);
+    const update = await req.app.get('database').collection('pets').updateOne(filter, updateDocument);
 
-    res.render('/view/favorited', { favoritePet });
+    res.render('liked', { favoritePet });
 };

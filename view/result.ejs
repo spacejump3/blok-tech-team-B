@@ -15,7 +15,7 @@
             <h2><%= pet.age %></h2>
             <h2><%= pet.soort %></h2>
             <h2><%= pet.trait %></h2>
-            <form class="favoriteForm" method="post" action="/favorited">
+            <form class="favoriteForm" method="post" action="/liked">
                 <button name="favorite" type="submit" value="<%= pet.name %>">Favorite</button>
             </form></div>
     <% }) %>
