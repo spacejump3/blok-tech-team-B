@@ -321,7 +321,13 @@ main button {
 
 .profiel div:first-of-type {
     display: flex;
-    gap: 1em;
+    gap: 3em;
+    align-items: center;
+    justify-content: center;
+}
+
+.profiel div:first-of-type > img {
+    border-radius: 10em;
 }
 
 .profiel form {
@@ -346,4 +352,8 @@ main button {
     font-size: 1em;
     border: none;
     border-bottom: 0.3em solid white;
+}
+
+.profiel > main > a {
+    margin-top: 2em;
 }
