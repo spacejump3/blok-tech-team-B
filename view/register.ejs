@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include ('../view/partials/head') %>
+
+    <body class="register">
+    <%- include ('../view/partials/header') %>
+    
+    <main>
+        <div>
+            <section>
+                <h1>PAWFECT MATCH</h1>
+                <h2>MAAK JE ACCOUNT AAN</h2>
+            </section>
+            <form method="post" action="/register/submit">
+                <label for="id">gebruikersnaam</label>
+                <input required type="text" value="" id="id" name="username" placeholder="vul hier je gebruikersnaam in">
+
+                <label for="id">E-mail</label>
+                <input required type="mail" value="" id="id" name="email" placeholder="vul hier je email adres in">
+
+                <label for="id">wachtwoord</label>
+                <input required type="password" value="" id="id" name="wachtwoord" placeholder="vul hier je wachtwoord in">
+
+                <input type="submit" value="registreer">
+            </form>
+        </div>
+    </main>
+</body>
+</html>
