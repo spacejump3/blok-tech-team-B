@@ -1,14 +1,16 @@
 const {
     Db
 } = require("mongodb")
+const session = require('express-session')
 
 exports.mijnProfiel = (req, res) => {
-    res.render('profile.ejs')
-}
+    const user = req.session.user
 
-exports.profielPagina = async (req, res) => {
-    const data = await req.app.get('database').collection('users').find().toArray()
-    res.render('profile.ejs', {
-        data: data
-    })
+    if (!user) {
+        res.redirect('/login')
+    } else {
+        res.render('profile.ejs', {
+            user
+        })
+    }
 }

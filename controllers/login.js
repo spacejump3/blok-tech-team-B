@@ -18,8 +18,9 @@ exports.inloggen = async (req, res) => {
     })
 
     if (userValidation) {
+      req.session.user = userValidation;
+      req.session.save()
       res.redirect('/profile')
-      console.log(userValidation)
     } else {
       res.redirect('/login')
     }
