@@ -7,10 +7,10 @@
 
     <main>
         <h1>Post an animal</h1>
-        <form action="">
+        <form action="/post/submit" method="post" enctype="multipart/form-data">
             
             <label for="name">Animal Name</label>
-            <input type="text" name="name" id="animal_name">
+            <input type="text" name="name" id="animal_name" required>
 
             <div class="file-input">
                 <div class="image-list"></div>
@@ -18,7 +18,7 @@
             </div>
 
             <label for="age">Animal Age</label>
-            <input type="number" name="age" id="age" min="0">
+            <input type="number" name="age" id="age" min="0" required>
 
             <label for="species">Species</label>
             <select name="species" id="species" required>

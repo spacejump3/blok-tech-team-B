@@ -1,22 +1,30 @@
-const multer = require('multer')
-
-const storage = multer.diskStorage({
-    destination: (req, file, callback) => {
-        callback(null, 'static/upload/')
-    },
-    filename: (req, file, callback) => {
-        callback(null, file.originalname)
-    },
-})
-
-const upload = multer({
-    storage: storage
-})
+const xss = require('xss')
 
 exports.postForm = (req, res) => {
     res.render('postform')
 }
 
-exports.submit = (req, res) => {
+exports.submit = async (req, res) => {
+    try {
 
+        let id = req.files[0].destination.split('/').at(-1)
+
+        let newPet = {
+            _id: id,
+            date: new Date(),
+            age: xss(req.body.age),
+            name: xss(req.body.name),
+            species: xss(req.body.species),
+            trait: xss(req.body.trait),
+            liked: false,
+            comments: []
+        }
+
+        await req.app.get('database').collection('pets').insertOne(newPet)
+
+        res.redirect(`/result/${id}`)
+
+    } catch (err) {
+        console.log(err.stack)
+    }
 }
