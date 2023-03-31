@@ -20,11 +20,16 @@ exports.submit = async (req, res) => {
             comments: []
         }
 
-        // await req.app.get('database').collection('pets').insertOne(newPet)
+        result = await req.app.get('database').collection('pets').insertOne(newPet)
 
-        console.log(newPet)
-
-        // res.redirect(`/result/${id}`)
+        if(req.headers.accept.includes('application/json')) {
+            res.send({
+                success: true,
+                id: result.insertedId
+            })
+        } else {
+            res.redirect(`/advertentie/${result.insertedId}`)
+        }
 
     } catch (err) {
         console.log(err.stack)
