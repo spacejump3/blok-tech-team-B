@@ -107,9 +107,18 @@ submitButton.addEventListener('click', (event) => {
 
 	formData.append('age', ageInput.value)
 	formData.append('species', speciesInput.value)
-	formData.append('inquisitive', inquisitiveCheckbox.checked)
-	formData.append('playful', playfulCheckbox.checked)
-	formData.append('friendly', friendlyCheckbox.checked)
+	
+	if(inquisitiveCheckbox.checked) {
+		formData.append('trait', 'inquisitive')
+	}
+
+	if(playfulCheckbox.checked) {
+		formData.append('trait', 'playful')
+	}
+
+	if(friendlyCheckbox.checked) {
+		formData.append('trait', 'friendly')
+	}
 
 	//Post form with fetch
 
