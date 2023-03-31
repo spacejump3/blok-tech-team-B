@@ -28,6 +28,7 @@ h1, h2, h3, h4 {
     padding: 0;
     margin: 0;
     list-style: none;
+    box-sizing: border-box;
 }
 
 body {
@@ -356,4 +357,84 @@ main button {
 
 .profiel > main > a {
     margin-top: 2em;
+}
+
+
+/* File Input */
+.image-list {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(12em, 16em) );
+    gap: 1em;
+}
+
+.image-list img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: .5em;
+    margin-bottom: 1em;
+}
+
+.image-list .upload-image-container {
+    position: relative;
+}
+
+.image-list button {
+    position: absolute;
+    background-color: white;
+    color: var(--text-color);
+    border-radius: 100%;
+    width: 2em;
+    height: 2em;
+    top: .5em;
+    right: .5em;
+    font-size: 1em;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    border: none;
+}
+
+input[type="file"] {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+/* submit button loading */
+button[type="submit"] {
+    font-size: 1em;
+    color: var(--accent-color);
+}
+
+button[type="submit"]:after {
+    content: '✓';
+    margin-left: 1ch;
+}
+
+button[type="submit"].loading {
+    background-color: grey;
+}
+
+button[type="submit"].loading:after {
+    content: '';
+    display: inline-block;
+    height: 1em;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: var(--accent-color) transparent;
+    border-width: 3px;
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        rotate: 0deg;
+    }
+
+    to {
+        rotate: 360deg;
+    }
 }

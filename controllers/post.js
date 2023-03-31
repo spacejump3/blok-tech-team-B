@@ -20,9 +20,11 @@ exports.submit = async (req, res) => {
             comments: []
         }
 
-        await req.app.get('database').collection('pets').insertOne(newPet)
+        // await req.app.get('database').collection('pets').insertOne(newPet)
 
-        res.redirect(`/result/${id}`)
+        console.log(newPet)
+
+        // res.redirect(`/result/${id}`)
 
     } catch (err) {
         console.log(err.stack)
