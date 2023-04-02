@@ -1,4 +1,3 @@
-// the data from the form will be showed in mongodb whenever someone fills in the form
 const ObjectId = require('mongodb').ObjectId
 
 exports.loadSingleAnimal = async (req, res) => {

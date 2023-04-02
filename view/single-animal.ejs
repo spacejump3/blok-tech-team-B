@@ -12,12 +12,18 @@
     <h2><%= resultPet.age %></h2>
     <h2><%= resultPet.soort %></h2>
     <h2><%= resultPet.trait %></h2>
-    <form method="post">
-        <h2>Comment section</h2>
+    <form method="post" action="/result/<%= pet._id %>/comments">
         <label for="comment">Comment</label>
-        <textarea name="" id="" cols="10" rows="5"></textarea>
+        <textarea name="comment" id="comment" cols="10" rows="5" placeholder="Leave a comment!"></textarea>
         <button type="submit">submit comment</button>
     </form>
+
+    <% for (const comment of pet.comments) { %>
+        <div>
+          <p><%= comment.text %></p>
+          <p><%= comment.date.toDateString() %></p>
+        </div>
+      <% } %>
 </main>
 </body>
 </html>
