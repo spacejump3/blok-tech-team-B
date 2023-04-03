@@ -3,7 +3,7 @@ const ObjectId = require('mongodb').ObjectId
 
 exports.postForm = async (req, res) => {
 
-    if(await req.app.get('database').collection('users').findOne({_id: new ObjectId(req.session.userid)}) == null) {
+    if(await req.app.get('database').collection('users').findOne({ _id: new ObjectId(req.session.userid) }) == null) {
         res.redirect('/login')
         return
     }
@@ -18,9 +18,15 @@ exports.submit = async (req, res) => {
 
         let images = []
 
-            req.files.forEach((file) => {
-                images.push(file.path)
-            })
+        req.files.forEach((file) => {
+            images.push(file.path)
+        })
+
+        let traits = []
+
+        req.body.trait.forEach((trait) => {
+            traits.push(xss(trait))
+        })
 
         let newPet = {
             _id: id,
@@ -29,7 +35,7 @@ exports.submit = async (req, res) => {
             age: xss(req.body.age),
             name: xss(req.body.name),
             species: xss(req.body.species),
-            trait: xss(req.body.trait),
+            trait: traits,
             images: images,
             liked: false,
             comments: []
