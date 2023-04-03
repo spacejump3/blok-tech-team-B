@@ -29,9 +29,9 @@ exports.submit = async (req, res) => {
         })
 
         let newPet = {
-            _id: id,
+            _id: new ObjectId(id),
             date: new Date(),
-            userid: req.session.userid,
+            userid: new ObjectId(req.session.userid),
             age: xss(req.body.age),
             name: xss(req.body.name),
             species: xss(req.body.species),
