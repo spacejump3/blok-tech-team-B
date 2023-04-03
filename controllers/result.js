@@ -17,6 +17,11 @@ exports.loadSingleAnimal = async (req, res) => {
 
 exports.loadResults = async (req, res) => {
     try {
+        const petList = {
+            soort: req.body.soort,
+            age: req.body.age,
+            trait: req.body.trait
+        }
 
         // based on the answers the user will be paired with an animal
         let resultPet = await req.app.get('database').collection('pets').find({ //https://stackoverflow.com/a/25670767
