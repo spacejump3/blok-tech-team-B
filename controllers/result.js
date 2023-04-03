@@ -1,5 +1,9 @@
 const ObjectId = require('mongodb').ObjectId
 
+const getUsername = async() => {
+    
+}
+
 exports.loadSingleAnimal = async (req, res) => {
     console.log(req.params.id)
     try {
