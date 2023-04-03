@@ -1,7 +1,19 @@
 const ObjectId = require('mongodb').ObjectId
 
+const getUsername = async(userId, req) => {
+    try {
+        let username = await req.app.get('database').collection('users').findOne(
+            {_id: new ObjectId(userId)},
+            {projection: {username: 1, _id: 0}})
+            return username.username
+    }
+    catch (err) {
+        console.log(err.stack)
+    }
+}
+
 exports.loadSingleAnimal = async (req, res) => {
-    console.log(req.params.id)
+    // console.log(req.params.id)
     try {
         let resultPet = await req.app.get('database').collection('pets').findOne({
             _id: new ObjectId(req.params.id)
@@ -10,7 +22,13 @@ exports.loadSingleAnimal = async (req, res) => {
         let sortedComments = resultPet.comments.sort((current, next) => {
             return new Date(next.date) - new Date(current.date)
         })
-        console.log(resultPet)
+        
+        for(let comment of sortedComments) {
+            comment.username = await getUsername(comment.userId, req)
+        }
+
+        console.log(sortedComments)
+        // console.log(resultPet)
         res.render('single-animal', {resultPet, sortedComments})
     }
     catch (err) {
@@ -35,7 +53,7 @@ exports.createComment = async (req, res) => {
         comment: req.body.comment,
         date: new Date()
     })
-    console.log(comments)
+    // console.log(comments)
 
     let pushComment = await req.app.get('database').collection('pets').updateOne(
         {_id: new ObjectId(petId)}, {$set:{comments: comments}})
