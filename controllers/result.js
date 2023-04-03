@@ -6,12 +6,44 @@ exports.loadSingleAnimal = async (req, res) => {
         let resultPet = await req.app.get('database').collection('pets').findOne({
             _id: new ObjectId(req.params.id)
         })
+
+        let sortedComments = resultPet.comments.sort((current, next) => {
+            return new Date(next.date) - new Date(current.date)
+        })
         console.log(resultPet)
-        res.render('single-animal', {resultPet})
+        res.render('single-animal', {resultPet, sortedComments})
     }
     catch (err) {
         console.log(err.stack)
     }
+}
+
+exports.createComment = async (req, res) => {
+    if(await req.app.get('database').collection('users').findOne({_id: new ObjectId(req.session.userid)}) == null) { 
+        res.redirect('/login') 
+        return
+    }
+    const petId = req.body.petId
+    let resultPet = await req.app.get('database').collection('pets').findOne({
+        _id: new ObjectId(petId)
+    })
+
+    let comments = resultPet.comments
+    
+    comments.push({
+        userId: new ObjectId(req.session.userid),
+        comment: req.body.comment,
+        date: new Date()
+    })
+    console.log(comments)
+
+    let pushComment = await req.app.get('database').collection('pets').updateOne(
+        {_id: new ObjectId(petId)}, {$set:{comments: comments}})
+
+
+    res.redirect(`/result/${petId}`)
+
+    // console.log(resultPet)
 }
 
 exports.loadResults = async (req, res) => {

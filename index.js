@@ -68,9 +68,6 @@ app.use('/post', postRoutes)
 const resultRoutes = require('./routes/result.js')
 app.use('/result', resultRoutes)
 
-// const commentRoutes = require('./routes/comment.js')
-// app.use('/result/:id', commentRoutes)
-
 app.use('/login', require('./routes/login.js'))
 
 app.use('/register', require('./routes/register.js'))
