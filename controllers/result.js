@@ -27,10 +27,6 @@ exports.loadSingleAnimal = async (req, res) => {
             comment.username = await getUsername(comment.userId, req)
         }
 
-        // await sortedComments.map(async(comment) => {
-        //     comment.username = await getUsername(comment.userId)
-        // })
-
         console.log(sortedComments)
         // console.log(resultPet)
         res.render('single-animal', {resultPet, sortedComments})
