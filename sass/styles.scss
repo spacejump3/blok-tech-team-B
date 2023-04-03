@@ -20,7 +20,10 @@ a {
     text-decoration: none;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-family: "Recky", sans-serif;
 }
 
@@ -28,6 +31,7 @@ h1, h2, h3, h4 {
     padding: 0;
     margin: 0;
     list-style: none;
+    box-sizing: border-box;
 }
 
 body {
@@ -41,35 +45,35 @@ header {
     align-items: center;
     background-color: var(--header-color);
     height: var(--header-height);
-  }
-  
-  
-  header h1 {
+}
+
+
+header h1 {
     font-family: "Recky", sans-serif;
     text-transform: uppercase;
     color: #e0815e;
     font-size: 3em;
     margin-left: .5em;
-  
-  }
-  
-  header nav ul {
+
+}
+
+header nav ul {
     font-family: "Recky";
     display: flex;
-  }
-  
-  header nav ul li img {
+}
+
+header nav ul li img {
     margin-right: .5em;
-  }
-  
-  header nav ul a li,
-  header nav ul a:last-of-type li:last-of-type {
+}
+
+header nav ul a li,
+header nav ul a:last-of-type li:last-of-type {
     text-transform: uppercase;
     box-shadow: 0px 4px 16px rgba(63, 63, 63, 0.1);
-  }
-  
-    
-  header nav ul a li {
+}
+
+
+header nav ul a li {
     display: flex;
     align-items: flex-end;
     font-size: 1.2em;
@@ -78,13 +82,13 @@ header {
     background-color: #fef2ca;
     color: #e0815e;
     margin: 0 .3em;
-  }
-  
-  header nav ul a:last-of-type li:last-of-type {
+}
+
+header nav ul a:last-of-type li:last-of-type {
     background-color: var(--accent-color);
     color: #fef2ca;
-  }
-  
+}
+
 
 /* index.ejs main styling */
 
@@ -114,7 +118,8 @@ form input::placeholder {
     color: #e0815e;
 }
 
-form input[type=submit], .profiel form input[type=submit] {
+form input[type=submit],
+.profiel form input[type=submit] {
     background-color: #e0815e;
     color: white;
     font-family: "Recky";
@@ -228,27 +233,27 @@ main button {
 
 // Inloggen 
 
-.login main{
+.login main {
     display: flex;
     align-items: center;
-    justify-content:center;
+    justify-content: center;
 
     height: calc(100vh - var(--header-height));
     overflow-y: hidden;
-    background-image: url(../static/images/katbg.png) ;
+    background-image: url(../static/images/katbg.png);
     background-position: left top;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.register main{
+.register main {
     display: flex;
     align-items: center;
-    justify-content:center;
+    justify-content: center;
 
     height: calc(100vh - var(--header-height));
     overflow-y: hidden;
-    background-image: url(../static/images/dogbg1.jpg) ;
+    background-image: url(../static/images/dogbg1.jpg);
     background-position: right bottom;
     background-repeat: no-repeat;
     background-size: cover;
@@ -257,56 +262,63 @@ main button {
 .profiel main {
     display: flex;
     align-items: center;
-    justify-content:center;
+    justify-content: center;
     flex-direction: column;
 
     height: calc(100vh - var(--header-height));
     overflow-y: hidden;
 }
+
 .login main div:first-of-type , .register main div:first-of-type {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.login main div:first-of-type section , .register main div:first-of-type section {
+.login main div:first-of-type section,
+.register main div:first-of-type section {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-.login main div:first-of-type section > h1 , .register main div:first-of-type section > h1 {
+.login main div:first-of-type section>h1,
+.register main div:first-of-type section>h1 {
     font-size: 3.3em;
     color: #e0815e;
 
 }
 
-.login main div:first-of-type section > h2 , .register main div:first-of-type section > h2{
+.login main div:first-of-type section>h2,
+.register main div:first-of-type section>h2 {
     font-size: 2.8em;
     font-family: "Recky", sans-serif;
     color: white;
     margin-bottom: 1em;
 }
 
-.login > form , .register > form {
+.login>form,
+.register>form {
     height: 50%;
 
     display: flex;
     flex-direction: column;
 }
 
-.login main div:first-of-type p , .register main div:first-of-type p {
+.login main div:first-of-type p,
+.register main div:first-of-type p {
     color: white;
 }
 
-.login main div:first-of-type p > a , .register main div:first-of-type p > a{
+.login main div:first-of-type p>a,
+.register main div:first-of-type p>a {
     color: #e0815e;
 }
 
 .login main div:first-of-type p,
-.login main div:first-of-type p > a ,
+.login main div:first-of-type p>a,
 .register main div:first-of-type p,
-.register main div:first-of-type p > a  {
+.register main div:first-of-type p>a {
     font-family: var(--font-family);
 }
 
@@ -325,7 +337,7 @@ main button {
     justify-content: center;
 }
 
-.profiel div:first-of-type > img {
+.profiel div:first-of-type>img {
     border-radius: 10em;
 }
 
@@ -353,6 +365,89 @@ main button {
     border-bottom: 0.3em solid white;
 }
 
-.profiel > main > a {
+.profiel>main>a {
     margin-top: 2em;
+}
+
+
+/* File Input */
+.image-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12em, 16em));
+    gap: 1em;
+}
+
+.image-list img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: .5em;
+    margin-bottom: 1em;
+}
+
+.image-list .upload-image-container {
+    position: relative;
+}
+
+.image-list button {
+    position: absolute;
+    background-color: white;
+    color: var(--text-color);
+    border-radius: 100%;
+    width: 2em;
+    height: 2em;
+    top: .5em;
+    right: .5em;
+    font-size: 1em;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    border: none;
+}
+
+input[type="file"] {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+/* submit button loading */
+.post-form {
+
+    button[type="submit"] {
+        font-size: 1em;
+        color: var(--accent-color);
+    }
+
+    button[type="submit"]:after {
+        content: '✓';
+        margin-left: 1ch;
+    }
+
+    button[type="submit"].loading {
+        background-color: grey;
+    }
+
+    button[type="submit"].loading:after {
+        content: '';
+        display: inline-block;
+        height: 1em;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        border-style: solid;
+        border-color: var(--accent-color) transparent;
+        border-width: 3px;
+        animation: rotate 2s linear infinite;
+    }
+}
+
+@keyframes rotate {
+    from {
+        rotate: 0deg;
+    }
+
+    to {
+        rotate: 360deg;
+    }
 }
