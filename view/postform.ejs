@@ -21,7 +21,11 @@
                     </div>
 
                     <label for="age">Animal Age</label>
-                    <input type="number" name="age" id="age" min="0" required>
+                    <select name="age" id="age" required>
+                        <option disabled selected value="">choose...</option>
+                        <option value="0-2">0-2</option>
+                        <option value="2-5">2-5+</option>
+                    </select>
 
                     <label for="species">Species</label>
                     <select name="species" id="species" required>

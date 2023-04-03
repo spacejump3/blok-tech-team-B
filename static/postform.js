@@ -76,11 +76,6 @@ submitButton.addEventListener('click', (event) => {
 		return
 	}
 
-	if(numberInputIsNegative(ageInput)) {
-		setInvalid(ageInput, 'Age cannot be negative.')
-		return
-	}
-
 	setValid(ageInput)
 
 	if(emptyInput(speciesInput)) {
@@ -155,23 +150,10 @@ const emptyInput = (input) => {
 	return input.value == ''
 }
 
-const inputIsNotText = (input) => {
-	let regex = /[^A-Za-zÀ-ÖØ-öø-ÿ0-9!?\.,:\ \-|()'"\n]+/
-	return {
-		value: regex.test(input.value),
-		reason: input.value.match(regex)
-	}
-}
-
 const noImagesInArray = (imageArray) => {
 	if(imageArray.length === 0) {
 		return true
 	} else {
 		return false
 	}
-}
-
-const numberInputIsNegative = (input) => {
-	let regex = /-\d/
-	return regex.test(input.value)
 }
