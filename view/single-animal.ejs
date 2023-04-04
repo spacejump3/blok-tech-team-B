@@ -12,9 +12,9 @@
     <h2><%= resultPet.species %></h2>
     <h2><%= resultPet.trait %></h2>
    
-    <form method="post" action="/result/postcomment">
+    <form class="comment-form" method="post" action="/result/postcomment">
         <label for="comment">Comment</label>
-        <textarea name="comment" id="comment" cols="10" rows="5" placeholder="Leave a comment!"></textarea>
+        <textarea name="comment" id="comment" rows="2" placeholder="Leave a comment!"></textarea>
         <button type="submit">submit comment</button>
         <input type="hidden" name="petId" value="<%= resultPet._id %>">
     </form>

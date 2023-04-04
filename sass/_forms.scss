@@ -52,6 +52,36 @@ form {
     }
 }
 
+.comment-form {
+    width: 100%;
+
+
+    textarea {
+        margin-bottom: 1em;
+        width: 100%;
+        resize: none;
+        border: none;
+        border-radius: .25em;
+        font-family: var(--font-family);
+        
+        &::placeholder {
+            color: var(--accent-color);
+        }
+    }
+
+    button {
+        width: 100%;
+        border: none;
+        background-color: var(--accent-color);
+        font-family: Recky;
+        font-size: 1.25em;
+    }
+
+    button:hover {
+        background-color: var(--accent-color-hover);
+    }
+}
+
 form input[type=submit],
 .profiel form input[type=submit] {
     background-color: #e0815e;
