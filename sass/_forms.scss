@@ -31,10 +31,6 @@ form {
         }
     }
 
-    select {
-        max-width: 10em;
-    }
-
     ul {
         list-style: none;
         margin-bottom: 2em;
@@ -46,7 +42,6 @@ form {
         gap: 1ch;
         align-items: center;
         justify-content: start;
-        width: 100%;
 
         input {
             margin-bottom: 0;
@@ -85,7 +80,7 @@ form {
         border: none;
         border-radius: .25em;
         font-family: var(--font-family);
-        
+
         &::placeholder {
             color: var(--accent-color);
         }
@@ -97,7 +92,8 @@ form {
 
 }
 
-.login, .register {
+.login,
+.register {
     form {
         height: 50%;
 
@@ -159,13 +155,25 @@ form {
     display: grid;
     justify-content: center;
     align-content: center;
-    border: none;
+    padding: 0;
 }
 
 input[type="file"] {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
+    background-color: transparent;
+    padding: 0;
+}
+
+input[type="file"]::file-selector-button {
+    background-color: var(--accent-color);
+    color: white;
+    font-family: "Recky";
+    padding: .5em;
+    font-size: 1em;
+    border-radius: .25em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    font-size: 1.2em;
 }
 
 
