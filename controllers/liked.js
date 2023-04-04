@@ -8,5 +8,5 @@ exports.like = async (req, res) => {
 
     const update = await req.app.get('database').collection('pets').updateOne(filter, updateDocument);
 
-    res.render('liked', { favoritePet });
+    res.render('liked', { favoritePetLiked: "Succesfully added " + favoritePet + " to favorites!" });
 };
