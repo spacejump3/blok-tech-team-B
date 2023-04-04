@@ -1,0 +1,25 @@
+.single-pet-heading {
+    font-family: Recky;
+    font-size: 5em;
+    text-align: center;
+    color: var(--accent-color);
+    font-weight: 100;
+    margin: .3em 0 .3em 0;
+}
+
+.single-pet-ul {
+    // background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    img {
+        width: 20em;
+        height: 100%;
+        margin: 0 .5em 0 .5em;
+        border-radius: .5em;
+        box-shadow: .3em .3em .8em #0001;
+    }
+}
+

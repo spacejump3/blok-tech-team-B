@@ -7,11 +7,14 @@
 <%- include ('../view/partials/header') %>
 
 <main>
-
-    <h2><%= resultPet.name %></h2>
-    <h2><%= resultPet.age %></h2>
-    <h2><%= resultPet.species %></h2>
-    <h2><%= resultPet.trait %></h2>
+    <h2 class="single-pet-heading"><%= resultPet.name %></h2>
+    <ul class="single-pet-ul">
+      <li class="single-pet-picture"></li>
+          <% resultPet.images.forEach(image => { %>
+          <img src="../<%= image %>" alt="photo of a pet" /> 
+          <% }) %>
+      </li>
+    </ul>
    
     <form class="comment-form" method="post" action="/result/postcomment">
         <label for="comment">Comment</label>
