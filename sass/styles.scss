@@ -13,6 +13,7 @@
     --background-color: #fef2ca;
     --header-color: #EECE79;
     --accent-color: #e0815e;
+    --accent-color-hover: #c26442;
     --font-family: 'Yusei Magic', sans-serif;
 }
 
@@ -253,11 +254,6 @@ main button {
 
 
 // comment
-.comment {
-    background-color: #0002;
-    margin: 1em 0 1em 0;
-    padding: 1em;
-}
 
 .errorpage{
     display: flex;
