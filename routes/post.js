@@ -8,16 +8,10 @@ const ObjectId = require('mongodb').ObjectId
 const storage = multer.diskStorage({
 	destination: (req, file, callback) => {
 
-		let id = new ObjectId()
-
-		if(!fs.existsSync(`static/upload/${id}`)) {
-			fs.mkdirSync(`static/upload/${id}`, { recursive: true });
-		}
-
-		callback(null, `static/upload/${id}`)
+		callback(null, `static/upload/`)
 	},
 	filename: (req, file, callback) => {
-		callback(null, file.originalname)
+		callback(null, `${new Date().getTime()}${file.originalname}`)
 	}
 })
 
