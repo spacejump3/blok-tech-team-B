@@ -28,10 +28,10 @@ exports.inloggen = async (req, res) => {
         req.session.save()
         res.redirect('/profile')
       } else {
-        res.redirect('/login/onjuist')
+        res.redirect('/login/failed')
       }
     } else {
-      res.redirect('/login/onjuist')
+      res.redirect('/login/failed')
     }
   } catch (err) {
     console.log(err)
