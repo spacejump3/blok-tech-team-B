@@ -44,57 +44,7 @@ main {
     margin: auto;
 }
 
-/* header styling */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--header-color);
-    height: var(--header-height);
-}
-
-
-header h1 {
-    font-family: "Recky", sans-serif;
-    text-transform: uppercase;
-    color: #e0815e;
-    font-size: 3em;
-    margin-left: .5em;
-
-}
-
-header nav ul {
-    font-family: "Recky";
-    display: flex;
-}
-
-header nav ul li img {
-    margin-right: .5em;
-}
-
-header nav ul a li,
-header nav ul a:last-of-type li:last-of-type {
-    text-transform: uppercase;
-    box-shadow: 0px 4px 16px rgba(63, 63, 63, 0.1);
-}
-
-
-header nav ul a li {
-    display: flex;
-    align-items: flex-end;
-    font-size: 1.2em;
-    padding: .5em;
-    border-radius: 15px;
-    background-color: #fef2ca;
-    color: #e0815e;
-    margin: 0 .3em;
-}
-
-header nav ul a:last-of-type li:last-of-type {
-    background-color: var(--accent-color);
-    color: #fef2ca;
-}
-
+@import 'header', 'forms', 'comment', 'result-list', 'result-page', 'error';
 
 /* index.ejs main styling */
 form {
