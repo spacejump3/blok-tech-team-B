@@ -13,8 +13,9 @@
                 <form action="/post/submit" method="post" enctype="multipart/form-data" class="post-form">
                     
                     <label for="name">Animal Name</label>
-                    <input type="text" name="name" id="name" required>
+                    <input type="text" name="name" id="name" required placeholder="Add the name of your animal">
 
+                    <label for="images">Images</label>
                     <div class="file-input">
                         <div class="image-list"></div>
                         <input type="file" name="images" id="images" multiple accept="image/*" required>
@@ -36,9 +37,9 @@
                     </select>
 
                     <label>Traits</label>
-                    <input type="checkbox" name="trait" value="inquisitive" id="inquisitive"><label for="inquisitive">inquisitive</label>
-                    <input type="checkbox" name="trait" value="playful" id="playful"><label for="playful">playful</label>
-                    <input type="checkbox" name="trait" value="friendly" id="friendly"><label for="friendly">friendly</label>
+                    <div class="checkbox-container"><input type="checkbox" name="trait" value="inquisitive" id="inquisitive"><label for="inquisitive">inquisitive</label></div>
+                    <div class="checkbox-container"><input type="checkbox" name="trait" value="playful" id="playful"><label for="playful">playful</label></div>
+                    <div class="checkbox-container"><input type="checkbox" name="trait" value="friendly" id="friendly"><label for="friendly">friendly</label></div>
 
                     <button type="submit" id="submit">submit</button>
 
