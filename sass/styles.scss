@@ -25,6 +25,7 @@ h2,
 h3,
 h4 {
     font-family: "Recky", sans-serif;
+    text-transform: uppercase;
 }
 
 * {
@@ -394,6 +395,18 @@ main button {
     background-color: var(--accent-color);
     color: var(--background-color);
     font-family: var(--font-family);
+}
+
+.errorpage > div {
+    display: flex;
+    gap: 1em;
+}
+
+.errorpage > div a {
+    font-family: "Recky", sans-serif;
+    font-weight: lighter;
+    color: white;
+    text-transform: uppercase;
 }
 
 /* File Input */

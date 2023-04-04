@@ -15,9 +15,9 @@
             <h2><%= favorite.age %></h2>
             <h2><%= favorite.soort %></h2>
             <h2><%= favorite.trait %></h2>
-            <form class="favoriteForm" method="post" action="">
-                <button name="favorite" type="submit" value="<%= pet.name %>">Remove</button>
-            </form></div>
+            <form class="favoriteForm" method="post" action="/removelike">
+                <button name="favorite" type="submit" value="<%= favorite.name %>">Remove</button>
+            </form></div></div>
     <% }) %>
 
     <a href="http://localhost:4000/"><button>Retake!</button></a>
