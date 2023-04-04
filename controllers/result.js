@@ -60,7 +60,6 @@ exports.createComment = async (req, res) => {
 
 
     res.redirect(`/result/${petId}`)
-
     // console.log(resultPet)
 }
 

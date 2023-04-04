@@ -38,6 +38,12 @@ body {
     background-color: var(--background-color);
 }
 
+// main styling
+main {
+    width: 80%;
+    margin: auto;
+}
+
 /* header styling */
 header {
     display: flex;
@@ -91,7 +97,6 @@ header nav ul a:last-of-type li:last-of-type {
 
 
 /* index.ejs main styling */
-
 form {
     border-radius: 10px;
     display: flex;
@@ -232,7 +237,6 @@ main button {
 // }
 
 // Inloggen 
-
 .login main {
     display: flex;
     align-items: center;
@@ -371,7 +375,6 @@ main button {
 
 
 // comment
-
 .comment {
     background-color: #0002;
     margin: 1em 0 1em 0;
