@@ -1,32 +1,66 @@
 <!DOCTYPE html>
 <html lang="nl">
-    
+
 <%- include ('../view/partials/head') %>
 
 <body>
 <%- include ('../view/partials/header') %>
 
-<!-- het dier wordt weergegevn wat er bij past -->
 <main>
     <h2><%= resultPet.name %></h2>
     <h2><%= resultPet.age %></h2>
-    <h2><%= resultPet.soort %></h2>
+    <h2><%= resultPet.species %></h2>
     <h2><%= resultPet.trait %></h2>
-    <form method="post">
-        <h2>Comment section</h2>
+   
+   
+    <form method="post" action="/result/postcomment">
         <label for="comment">Comment</label>
-        <textarea name="" id="" cols="10" rows="5"></textarea>
+        <textarea name="comment" id="comment" cols="10" rows="5" placeholder="Leave a comment!"></textarea>
         <button type="submit">submit comment</button>
+        <input type="hidden" name="petId" value="<%= resultPet._id %>">
     </form>
-    <ul>
-        <% comments.forEach(comment => { %>
-          <li>
-            <strong><%= comment.name %></strong>
-            <span><%= comment.timestamp.toLocaleString() %></span>
+
+    <% sortedComments.forEach((comment) => { %>
+        <div class="comment">
+            <p><%= comment.username %></p>
             <p><%= comment.comment %></p>
-          </li>
-        <% }); %>
-      </ul>
+            <p>
+                <!-- bron: https://stackoverflow.com/questions/3177836/how-to-format-time-since-xxx-e-g-4-minutes-ago-similar-to-stack-exchange-site -->
+                <%
+                function timeSince(date) {
+
+                    var seconds = Math.floor((new Date() - date) / 1000);
+                  
+                    var interval = seconds / 31536000;
+                  
+                    if (interval > 1) {
+                      return Math.floor(interval) + " years";
+                    }
+                    interval = seconds / 2592000;
+                    if (interval > 1) {
+                      return Math.floor(interval) + " months";
+                    }
+                    interval = seconds / 86400;
+                    if (interval > 1) {
+                      return Math.floor(interval) + " days";
+                    }
+                    interval = seconds / 3600;
+                    if (interval > 1) {
+                      return Math.floor(interval) + " hours";
+                    }
+                    interval = seconds / 60;
+                    if (interval > 1) {
+                      return Math.floor(interval) + " minutes";
+                    }
+                    return Math.floor(seconds) + " seconds";
+                  }
+                  var aDay = 24*60*60*1000;
+                %>
+                <%= timeSince(new Date(comment.date)) + " ago" %>
+            </p>
+        </div>
+      <% }) %>
+
 </main>
 </body>
 </html>

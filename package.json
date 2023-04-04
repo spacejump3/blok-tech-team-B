@@ -21,11 +21,12 @@
   },
   "homepage": "https://github.com/lucaoudejans/projecttech#readme",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "dotenv": "^16.0.3",
     "ejs": "^3.1.8",
     "express": "^4.18.2",
-    "fs": "^0.0.1-security",
     "express-session": "^1.17.3",
+    "fs": "^0.0.1-security",
     "mongodb": "^5.1.0",
     "mongoose": "^7.0.3",
     "multer": "^1.4.5-lts.1",

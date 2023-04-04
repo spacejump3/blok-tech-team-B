@@ -1,61 +1,81 @@
-// the data from the form will be showed in mongodb whenever someone fills in the form
 const ObjectId = require('mongodb').ObjectId
 
-exports.loadSingleAnimal = async (req, res) => {
-    console.log(req.params.id)
+const getUsername = async(userId, req) => {
     try {
-        let resultPet = await req.app.get('database').collection('pets').findOne({
-            _id: new ObjectId(req.params.id)
-        })
-        console.log(resultPet)
-        res.render('single-animal', {resultPet})
+        let username = await req.app.get('database').collection('users').findOne(
+            {_id: new ObjectId(userId)},
+            {projection: {username: 1, _id: 0}})
+            return username.username
     }
     catch (err) {
         console.log(err.stack)
     }
 }
 
-// app.post('/single-animal', function (req, res) => {
-//     const collection = db.collection('comments')
-//     const comment = {
-//         name: req.body.name,
-//         email: req.body.email,
-//         comment: req.body.comment,
-//         timestamp: new Date()
-//     }
-//     collection.insertOne(comment, (err) => {
-//         if (err) {
-//             console.error(err)
-//             return
-//         }
-//     })
-// })
+exports.loadSingleAnimal = async (req, res) => {
+    // console.log(req.params.id)
+    try {
+        let resultPet = await req.app.get('database').collection('pets').findOne({
+            _id: new ObjectId(req.params.id)
+        })
 
-// app.get('/', (req, res) => {
-//     const collection = db.collection('comments')
-//     collection.find().sort({ timestamp: -1 }).toArray((err, comments) => {
-//       if (err) {
-//         console.error(err)
-//         return
-//       }
-//       res.render('index', { comments })
-//     })
-//   })
+        let sortedComments = resultPet.comments.sort((current, next) => {
+            return new Date(next.date) - new Date(current.date)
+        })
+        
+        for(let comment of sortedComments) {
+            comment.username = await getUsername(comment.userId, req)
+        }
+
+        console.log(sortedComments)
+        // console.log(resultPet)
+        res.render('single-animal', {resultPet, sortedComments})
+    }
+    catch (err) {
+        console.log(err.stack)
+    }
+}
+
+exports.createComment = async (req, res) => {
+    if(await req.app.get('database').collection('users').findOne({_id: new ObjectId(req.session.userid)}) == null) { 
+        res.redirect('/login') 
+        return
+    }
+    const petId = req.body.petId
+    let resultPet = await req.app.get('database').collection('pets').findOne({
+        _id: new ObjectId(petId)
+    })
+
+    let comments = resultPet.comments
+    
+    comments.push({
+        userId: new ObjectId(req.session.userid),
+        comment: req.body.comment,
+        date: new Date()
+    })
+    // console.log(comments)
+
+    let pushComment = await req.app.get('database').collection('pets').updateOne(
+        {_id: new ObjectId(petId)}, {$set:{comments: comments}})
+
+
+    res.redirect(`/result/${petId}`)
+
+    // console.log(resultPet)
+}
 
 exports.loadResults = async (req, res) => {
     try {
         const petList = {
-            soort: req.body.soort,
+            species: req.body.species,
             age: req.body.age,
             trait: req.body.trait
         }
 
-        await req.app.get('database').collection('submission').insertOne(petList) //https://stackoverflow.com/a/25670767
-
         // based on the answers the user will be paired with an animal
-        let resultPet = await req.app.get('database').collection('pets').find({
+        let resultPet = await req.app.get('database').collection('pets').find({ //https://stackoverflow.com/a/25670767
             $and: [
-                { soort: req.body.soort },
+                { species: req.body.species },
                 { age: req.body.age },
             ]
         }).toArray()

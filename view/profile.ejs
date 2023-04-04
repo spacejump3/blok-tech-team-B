@@ -13,20 +13,20 @@
             <div>
                 <img src="../static/images/dog1.jpg">
             </div>
-            <form method="post" action="">
+            <form method="post" action="/profile/submit">
                 <label for="id">Gebruikersnaam</label>
-                <input required type="text" value="" id="id" name="username" placeholder="vul hier je wachtwoord in">
+                <input  type="text" id="id" name="username" value="<%= data.username %>">
 
                 <label for="id">E-mail</label>
-                <input required type="mail" value="" id="id" name="email" placeholder="vul hier je email adres in">
+                <input  type="mail" id="id" name="email" value="<%= data.email %>">
 
                 <label for="id">Wachtwoord</label>
-                <input required type="text" value="" id="id" name="wachtwoord" placeholder="vul hier je wachtwoord in">
+                <input  type="password" id="id" name="wachtwoord" value="">
 
                 <input type="submit" value="bewerken opslaan">
             </form>
         </div>
-        <a href="">Uitloggen</a>
+        <a href="/profile/logout">Uitloggen</a>
     </main>
 </body>
 
