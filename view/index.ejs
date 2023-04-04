@@ -6,65 +6,65 @@
 <%- include ('../view/partials/header') %>
 
 <main>
-    <form action="result" method="post">
+	<form action="result" method="post">
 
-        <section>
-            <h1>Find your perfect adoptable match!</h1>
-        </section>    
+		<section>
+			<h1>Find your perfect adoptable match!</h1>
+		</section>    
 
-        <section>
-            <h2>I'm looking for a...</h2>
-            <ul>
-                <li><input class="box" type="radio" name ="species" id="cat" value="cat">
-                    <label for="cat">Cat</label>
-                </li>
+		<label>I'm looking for a...</label>
+		<ul>
+			<li>
+				<input type="radio" name ="species" id="cat" value="cat">
+				<label for="cat">Cat</label>
+			</li>
 
-                <li><input class="box" type="radio" name ="species" id="dog" value="dog">
-                    <label for="dog">Dog</label>
-                </li>
+			<li>
+				<input type="radio" name ="species" id="dog" value="dog">
+				<label for="dog">Dog</label>
+			</li>
 
-                <li><input class="box" type="radio" name ="species" id="bunny" value="bunny">
-                    <label for="bunny">Bunny</label>
-                </li>
-            </ul>
-        </section>
+			<li>
+				<input type="radio" name ="species" id="bunny" value="bunny">
+				<label for="bunny">Bunny</label>
+			</li>
+		</ul>
 
-        <section>
-            <h2>The age must be...</h2>
-            <ul>
-                <li><input class="box" type="radio" name="age" id="0-2" value="0-2"/>
-                    <label for="0-2">0 to 2 years</label>
-                </li>
+		<label>The age must be...</label>
+		<ul>
+			<li>
+				<input type="radio" name="age" id="0-2" value="0-2"/>
+				<label for="0-2">0 to 2 years</label>
+			</li>
 
-                <li><input class="box" type="radio" name="age"  id="2-5" value="2-5"/>
-                    <label for="2-5">2 to 5+ years</label>
-                </li>
-            </ul>
-        </section>
+			<li>
+				<input type="radio" name="age"  id="2-5" value="2-5"/>
+				<label for="2-5">2 to 5+ years</label>
+			</li>
+		</ul>
 
-        <section>
-           <h2>I want the pet to be...</h2>
-            <p class="ondertekst">(multiple answers are possible)</p>
-            <ul>
-                <li><input class="box" type="checkbox" name="trait" id="inquisitive" value="inquisitive"/>
-                    <label for="inquisitive">inquisitive</label>
-                </li>
+		<label>I want the pet to be...</label>
+		<small>(multiple answers are possible)</small>
+		<ul>
+			<li>
+				<input type="checkbox" name="trait" id="inquisitive" value="inquisitive"/>
+				<label for="inquisitive">inquisitive</label>
+			</li>
+			<li>
+				<input type="checkbox" name="trait" id="playful" value="playful"/>
+				<label for="playful">playful</label>
+			</li>
 
-                <li><input class="box" type="checkbox" name="trait" id="playful" value="playful"/>
-                    <label for="playful">playful</label>
-                </li>
+			<li>
+				<input type="checkbox" name="trait" id="friendly" value="friendly"/>
+				<label for="friendly">friendly</label>
+			</li>
+		</ul>
 
-                <li><input class="box" type="checkbox" name="trait" id="friendly" value="friendly"/>
-                    <label for="friendly">friendly</label>
-                </li>
-            </ul>
-        </section>
+		<button type="submit" id="submit" name="submit">see my PawfectMatch!</button>
 
-        <section>
-            <button type="submit" id="submit" name="submit">see my PawfectMatch!</button>
-        </section>
 
-    </form>    
-    </main>
+	</form>    
+	</main>
 </body>
 </html>
