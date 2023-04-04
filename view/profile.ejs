@@ -7,26 +7,26 @@
 
     <main>
         <section>
-            <h1>WELKOM OP <%= data.username %> PROFIEL</h1>
+            <h1>WELCOME TO YOUR PROFILE, <%= data.username %>! </h1>
         </section>
         <div>
             <div>
                 <img src="../static/images/dog1.jpg">
             </div>
-            <form method="post" action="">
-                <label for="id">Gebruikersnaam</label>
-                <input required type="text" value="" id="id" name="username" placeholder="vul hier je wachtwoord in">
+            <form method="post" action="/profile/submit">
+                <label for="id">username</label>
+                <input  type="text" id="id" name="username" value="<%= data.username %>">
 
                 <label for="id">E-mail</label>
-                <input required type="mail" value="" id="id" name="email" placeholder="vul hier je email adres in">
+                <input  type="mail" id="id" name="email" value="<%= data.email %>">
 
-                <label for="id">Wachtwoord</label>
-                <input required type="text" value="" id="id" name="wachtwoord" placeholder="vul hier je wachtwoord in">
+                <label for="id">password</label>
+                <input  type="password" id="id" name="wachtwoord" value="<%= data.password %>">
 
                 <input type="submit" value="bewerken opslaan">
             </form>
         </div>
-        <a href="">Uitloggen</a>
+        <a href="/profile/logout">Log out</a>
     </main>
 </body>
 

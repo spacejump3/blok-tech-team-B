@@ -6,6 +6,7 @@ require('dotenv').config()
 // import express application 
 const express = require('express')
 const session = require('express-session')
+const ObjectId = require('mongodb').ObjectId
 
 const app = express()
 
@@ -58,10 +59,19 @@ app.use(session({
 // all pages
 // home
 app.get('/', function (req, res) {
-    res.render('index')
+        res.render('index')
 })
 
 // routes
+const liked = require('./routes/liked.js')
+app.use('/liked', liked)
+
+const favorites = require('./routes/favorites.js')
+app.use('/favorites', favorites)
+
+const removeLike = require('./routes/removelike.js')
+app.use('/removelike', removeLike)
+
 const postRoutes = require('./routes/post.js')
 app.use('/post', postRoutes)
 
