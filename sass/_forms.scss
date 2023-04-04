@@ -1,8 +1,6 @@
 form {
-    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    width: 75%;
     align-items: start;
 
     label {
@@ -27,10 +25,10 @@ form {
         width: 100%;
         max-width: 30em;
         cursor: pointer;
-    }
 
-    input::placeholder {
-        color: var(--accent-color);
+        &::placeholder {
+            color: var(--accent-color);
+        }
     }
 
     select {
@@ -64,22 +62,21 @@ form {
     }
 
     input[type="submit"] {
-        background-color: #e0815e;
+        background-color: var(--accent-color);
         color: white;
         font-family: "Recky";
         padding: .5em;
         font-size: 1em;
         margin-top: 1em;
-        border-radius: 5px;
+        border-radius: .25em;
         text-transform: uppercase;
         cursor: pointer;
         border: none;
+        font-size: 1.2em;
     }
 }
 
 .comment-form {
-    width: 100%;
-
 
     textarea {
         margin-bottom: 1em;
@@ -96,47 +93,38 @@ form {
 
     button {
         width: 100%;
-        border: none;
-        background-color: var(--accent-color);
-        font-family: Recky;
-        font-size: 1.25em;
     }
 
-    button:hover {
-        background-color: var(--accent-color-hover);
+}
+
+.login, .register {
+    form {
+        height: 50%;
+
+        display: flex;
+        flex-direction: column;
+
+        label {
+            color: white;
+        }
     }
 }
 
-.login>form,
-.register>form {
-    height: 50%;
+.profiel {
+    form {
+        width: 75%;
 
-    display: flex;
-    flex-direction: column;
-}
+        input {
+            color: #e0815e;
+            font-family: var(--font-family);
+            background-color: transparent;
+            margin-bottom: 0.5em;
+            font-size: 1em;
+            border: none;
+            border-bottom: 0.3em solid white;
+        }
 
-.profiel form {
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    width: 75%;
-}
-
-.profiel form label {
-    font-size: 1.2em;
-    color: black;
-    text-transform: uppercase;
-    font-family: "Recky";
-}
-
-.profiel form input {
-    color: #e0815e;
-    font-family: var(--font-family);
-    background-color: transparent;
-    margin-bottom: 0.5em;
-    font-size: 1em;
-    border: none;
-    border-bottom: 0.3em solid white;
+    }
 }
 
 /* File Input */
@@ -183,11 +171,6 @@ input[type="file"] {
 
 /* submit button loading */
 .post-form {
-
-    button[type="submit"] {
-        font-size: 1em;
-        color: var(--accent-color);
-    }
 
     button[type="submit"]:after {
         content: '✓';

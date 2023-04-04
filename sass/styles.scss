@@ -106,13 +106,20 @@ section:nth-of-type(5) {
 
 main button {
     text-decoration: none;
-    color: var(--background-color);
-    border: 0.3em solid #dc7955;
-    border-radius: 0.5em;
-    padding: 0.5em;
-    background-color: var(--header-color);
-    font-family: var(--font-family);
+    color: white;
+    border: none;
+    border-radius: 3em;
+    padding: .5em 1.5em;
+    background-color: var(--accent-color);
+    font-family: 'Recky', sans-serif;
     cursor: pointer;
+    font-size: 1.2em;
+    diplay: flex;
+    align-items: flex-end;
+}
+
+main button:hover {
+    background-color: var(--accent-color-hover);
 }
 
 /* result.ejs main styling */
@@ -185,7 +192,8 @@ main button {
     overflow-y: hidden;
 }
 
-.login main div:first-of-type , .register main div:first-of-type {
+.login main div:first-of-type,
+.register main div:first-of-type {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -256,7 +264,7 @@ main button {
 
 // comment
 
-.errorpage{
+.errorpage {
     display: flex;
     flex-direction: column;
     gap: 1em;
@@ -264,7 +272,7 @@ main button {
     margin-top: 5em;
 }
 
-.errorbutton{
+.errorbutton {
     text-decoration: none;
     border: 0.1em solid var(--accent-color);
     border-radius: 1em;
