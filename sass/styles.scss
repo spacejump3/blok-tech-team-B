@@ -75,38 +75,10 @@ section:nth-of-type(2) {
     padding: 1em;
 }
 
-section .ondertekst {
-    font-size: 0.6em;
+small {
+    font-size: .8em;
     font-family: var(--font-family);
     padding-bottom: 1em;
-}
-
-section:nth-of-type(2) {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-section:nth-of-type(3) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding: 1em;
-}
-
-section:nth-of-type(4) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding: 1em;
-}
-
-section:nth-of-type(5) {
-    display: flex;
-    justify-content: center;
-    padding: 2em;
 }
 
 main button {
