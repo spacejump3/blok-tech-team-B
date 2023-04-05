@@ -1,12 +1,16 @@
+const ObjectId = require('mongodb').ObjectId
 exports.removeLike = async (req, res) => {
-    const favoritePet = req.body.favorite;
-    console.log(favoritePet);
+    const favoritePetId = req.body.favorite;
+    console.log(favoritePetId);
 
-    const filter = { name: favoritePet };
+    const favoritePetName = req.body.favoritename;
+    console.log(favoritePetName)
+
+    const filter = { _id: new ObjectId(favoritePetId) };
 
     const updateDocument = { $set: { liked: false} };
 
     const update = await req.app.get('database').collection('pets').updateOne(filter, updateDocument);
 
-    res.render('liked', { favoritePet });
+    res.render('liked', { favoritePetLiked: "Succesfully removed " + favoritePetName + " from favorites!" });
 };
