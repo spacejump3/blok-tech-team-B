@@ -5,6 +5,6 @@ const loginController = require('../controllers/login.js')
 
 router.get('/', loginController.inlogPagina)
 router.post('/submit', loginController.inloggen)
-router.get('/onjuist', loginController.inloggenMislukt)
+router.get('/failed', loginController.inloggenMislukt)
 
 module.exports = router
