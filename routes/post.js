@@ -2,13 +2,11 @@ const express = require('express')
 const router = express.Router()
 
 const multer = require('multer')
-const fs = require('fs')
-const ObjectId = require('mongodb').ObjectId
 
 const storage = multer.diskStorage({
 	destination: (req, file, callback) => {
 
-		callback(null, `static/upload/`)
+		callback(null, 'static/upload/')
 	},
 	filename: (req, file, callback) => {
 		callback(null, `${new Date().getTime()}${file.originalname}`)
