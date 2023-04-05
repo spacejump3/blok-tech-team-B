@@ -113,6 +113,10 @@ form {
 }
 
 /* File Input */
+.file-input {
+    width: 100%;
+}
+
 .image-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(12em, 16em));
