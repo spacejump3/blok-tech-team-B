@@ -6,9 +6,6 @@ exports.removeLike = async (req, res) => {
     const favoritePetName = req.body.favoritename;
     console.log(favoritePetName)
 
-    // const favoritePetName = document.querySelector('.unlikeBtn').name
-    // console.log(favoritePetName)
-
     const filter = { _id: new ObjectId(favoritePetId) };
 
     const updateDocument = { $set: { liked: false} };
