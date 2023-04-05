@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="nl">
+<%- include ('../view/partials/head') %>
+
+<body class="profiel">
+    <%- include ('../view/partials/header') %>
+
+    <main>
+        <section>
+            <h1>WELCOME TO YOUR PROFILE, <%= data.username %>! </h1>
+        </section>
+        <div>
+            <div>
+                <img src="../static/images/dog1.jpg">
+            </div>
+            <form method="post" action="/profile/submit">
+                <label for="id">username</label>
+                <input  type="text" id="id" name="username" value="<%= data.username %>">
+
+                <label for="id">E-mail</label>
+                <input  type="mail" id="id" name="email" value="<%= data.email %>">
+
+                <input type="submit" value="save changes">
+            </form>
+        </div>
+        <a href="/profile/logout">Log out</a>
+    </main>
+</body>
+
+</html>

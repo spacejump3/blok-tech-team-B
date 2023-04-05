@@ -1,0 +1,103 @@
+/* fonts */
+@import url('https://fonts.cdnfonts.com/css/yusei-magic');
+
+@font-face {
+    font-family: Recky;
+    src: url("/static/Fonts/Recky.ttf") format('truetype');
+
+}
+
+/* general */
+:root {
+    --header-height: 5em;
+    --background-color: #fef2ca;
+    --header-color: #EECE79;
+    --accent-color: #e0815e;
+    --accent-color-hover: #c26442;
+    --font-family: 'Yusei Magic', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Recky", sans-serif;
+    text-transform: uppercase;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-color);
+    
+}
+
+// main styling
+main {
+    width: 80%;
+    margin: auto;
+    padding-bottom: 5em;
+}
+
+main.index {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@import 'header', 'forms', 'comment', 'result-list', 'result-page', 'error', 'favorites', 'login', 'profile';
+
+
+section:nth-of-type(1) {
+    display: flex;
+    justify-content: center;
+    height: 7em;
+    align-items: center;
+    font-family: var(--font-family);
+}
+
+h2 {
+    font-family: var(--font-family);
+    font-size: 1.3em;
+}
+
+section:nth-of-type(2) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
+
+small {
+    font-size: .8em;
+    font-family: var(--font-family);
+    padding-bottom: 1em;
+}
+
+main button {
+    text-decoration: none;
+    color: white;
+    border: none;
+    border-radius: 3em;
+    padding: .5em 1.5em;
+    background-color: var(--accent-color);
+    font-family: 'Recky', sans-serif;
+    cursor: pointer;
+    font-size: 1.2em;
+    display: flex;
+    align-items: flex-end;
+}
+
+main button:hover {
+    background-color: var(--accent-color-hover);
+}

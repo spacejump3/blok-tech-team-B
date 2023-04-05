@@ -1,0 +1,15 @@
+//favorites.ejs page
+.zerostateFavoritesText {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 0.5em;
+    margin-bottom: 0;
+}
+
+//liked.ejs page
+.favoriteLikedText {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 2em;
+    border-bottom: 4px solid var(--accent-color);
+}
