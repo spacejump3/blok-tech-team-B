@@ -1,0 +1,47 @@
+.petpicture {
+    width: 60%;
+}
+
+.results {
+    background-color: var(--background-color);
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    margin-top: 1em;
+    padding: 2em;
+}
+
+.info {
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100%;
+    width: 100%;
+    align-items: center;
+    border: 0.5em solid var(--header-color);
+    margin-bottom: 2em;
+
+    a {
+        text-decoration: none;
+        color: white;
+        border: none;
+        border-radius: 3em;
+        padding: .5em 1.5em;
+        background-color: var(--accent-color);
+        font-family: 'Recky', sans-serif;
+        cursor: pointer;
+        font-size: 1.2em;
+    }
+
+    a:hover {
+        background-color: var(--accent-color-hover);
+    }
+}
+
+.favoriteForm {
+    display: flex;
+    flex-direction: row;
+    gap: .2em;
+}

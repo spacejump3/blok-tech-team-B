@@ -101,31 +101,3 @@ main button {
 main button:hover {
     background-color: var(--accent-color-hover);
 }
-
-/* result.ejs main styling */
-.petpicture {
-    width: 60%;
-}
-
-.results {
-    background-color: var(--background-color);
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: auto;
-    margin-top: 1em;
-    padding: 2em;
-}
-
-.info {
-    background-color: white;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 100%;
-    width: 100%;
-    align-items: center;
-    border: 0.5em solid var(--header-color);
-    margin-bottom: 2em;
-}
-
