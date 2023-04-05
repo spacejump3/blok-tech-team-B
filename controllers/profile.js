@@ -26,7 +26,6 @@ exports.profielBewerken = async (req, res) => {
     const {
         username,
         email,
-        wachtwoord
     } = req.body;
 
     //vinden van het account wat is ingelogd
@@ -36,7 +35,6 @@ exports.profielBewerken = async (req, res) => {
         $set: {
             username: username,
             email: email,
-            password: wachtwoord
         }
     })
     res.redirect('/profile')
