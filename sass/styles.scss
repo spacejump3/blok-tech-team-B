@@ -38,15 +38,20 @@ h4 {
 
 body {
     background-color: var(--background-color);
+    
 }
 
 // main styling
 main {
     width: 80%;
     margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 5em);
 }
 
-@import 'header', 'forms', 'comment', 'result-list', 'result-page', 'error', 'favorites';
+@import 'header', 'forms', 'comment', 'result-list', 'result-page', 'error', 'favorites', 'login', 'profile';
 
 
 section:nth-of-type(1) {
@@ -149,119 +154,3 @@ main button:hover {
     margin-bottom: 2em;
 }
 
-// Inloggen 
-.login main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    height: calc(100vh - var(--header-height));
-    overflow-y: hidden;
-    background-image: url(../static/images/katbg.png);
-    background-position: left top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-}
-
-.register main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    height: calc(100vh - var(--header-height));
-    overflow-y: hidden;
-    background-image: url(../static/images/dogbg1.jpg);
-    background-position: right bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-}
-
-.profiel main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
-    height: calc(100vh - var(--header-height));
-    overflow-y: hidden;
-}
-
-.login main div:first-of-type,
-.register main div:first-of-type {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.login main div:first-of-type section,
-.register main div:first-of-type section {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.login main div:first-of-type section>h1,
-.register main div:first-of-type section>h1 {
-    font-size: 3.3em;
-    color: #e0815e;
-
-}
-
-.login main div:first-of-type section>h2,
-.register main div:first-of-type section>h2 {
-    font-size: 2.8em;
-    font-family: "Recky", sans-serif;
-    color: white;
-    margin-bottom: 1em;
-}
-
-.login main div:first-of-type p,
-.register main div:first-of-type p {
-    color: white;
-}
-
-.login main div:first-of-type p>a,
-.register main div:first-of-type p>a {
-    color: #e0815e;
-}
-
-.login main div:first-of-type p,
-.login main div:first-of-type p>a,
-.register main div:first-of-type p,
-.register main div:first-of-type p>a {
-    font-family: var(--font-family);
-}
-
-
-// mijn profiel
-.profiel h1 {
-    font-size: 3em;
-    font-weight: 400;
-    color: #e0815e;
-}
-
-.profiel div:first-of-type {
-    display: flex;
-    gap: 3em;
-    align-items: center;
-    justify-content: center;
-}
-
-.profiel div:first-of-type>img {
-    border-radius: 10em;
-}
-
-.profiel>main>a {
-    background-color: var(--accent-color);
-    color: white;
-    font-family: "Recky";
-    padding: .5em;
-    margin-top: 1em;
-    border-radius: .5em;
-    text-transform: uppercase;
-    cursor: pointer;
-    border: none;
-    font-size: 1.3em;
-}
