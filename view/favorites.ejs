@@ -23,8 +23,8 @@
                     <form class="favoriteForm" method="post" action="/removelike">
                         <input type="hidden" name="favoritename" value="<%= favorite.name %>">
                         <button class="unlikeBtn" name="favorite" type="submit" value="<%= favorite._id %>">Remove</button>
+                        <a href="/result/<%= favorite._id %>">More info</a>
                     </form>
-                    <a href="/result/<%= favorite._id %>">More info</a>
                 </div>
             </div>
         <% }) %>
