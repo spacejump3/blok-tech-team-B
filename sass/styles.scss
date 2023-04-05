@@ -48,6 +48,12 @@ main {
     padding-bottom: 5em;
 }
 
+main.index {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @import 'header', 'forms', 'comment', 'result-list', 'result-page', 'error', 'favorites', 'login', 'profile';
 
 
