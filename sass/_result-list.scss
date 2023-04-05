@@ -23,6 +23,10 @@
     border: 0.5em solid var(--header-color);
     margin-bottom: 2em;
 
+    h2:last-of-type{
+        margin-bottom: 0.5em;
+    }
+
     a {
         text-decoration: none;
         color: white;
