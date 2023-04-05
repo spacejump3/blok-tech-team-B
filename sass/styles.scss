@@ -265,24 +265,3 @@ main button:hover {
     border: none;
     font-size: 1.3em;
 }
-
-
-// comment
-
-.errorpage {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    align-items: center;
-    margin-top: 5em;
-}
-
-.errorbutton {
-    text-decoration: none;
-    border: 0.1em solid var(--accent-color);
-    border-radius: 1em;
-    padding: 0.5em;
-    background-color: var(--accent-color);
-    color: var(--background-color);
-    font-family: var(--font-family);
-}
