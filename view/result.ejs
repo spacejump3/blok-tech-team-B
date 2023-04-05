@@ -19,8 +19,8 @@
                 <form class="favoriteForm" method="post" action="/liked">
                     <input type="hidden" name="petname" value="<%= pet.name %>">
                     <button class="likeBtn" name="favorite" type="submit" value="<%= pet._id %>">Favorite</button>
-                </form>
-                <a href="/result/<%= pet._id %>">meer info</a>
+                    <a class="anchor-button" href="/result/<%= pet._id %>">More info</a>
+                </form> 
             </div>
         </div>
         <% }) %>

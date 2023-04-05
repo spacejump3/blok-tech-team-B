@@ -34,6 +34,7 @@ exports.loadSingleAnimal = async (req, res) => {
 }
 
 exports.createComment = async (req, res) => {
+
 	if(await req.app.get('database').collection('users').findOne({_id: new ObjectId(req.session.userid)}) == null) { 
 		res.redirect('/login') 
 		return

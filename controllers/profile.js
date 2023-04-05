@@ -19,6 +19,7 @@ exports.profielPagina = async (req, res) => {
 }
 
 exports.profielBewerken = async (req, res) => {
+
 	let userid = req.session.userid
 	const {
 		username,
