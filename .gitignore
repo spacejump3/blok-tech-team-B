@@ -3,4 +3,3 @@ node_modules
 .env
 static/styles.css
 static/styles.css.map
-static/upload

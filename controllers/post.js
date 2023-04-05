@@ -14,8 +14,6 @@ exports.postForm = async (req, res) => {
 exports.submit = async (req, res) => {
     try {
 
-        let id = req.files[0].destination.split('/').at(-1)
-
         let images = []
 
         req.files.forEach((file) => {
@@ -29,7 +27,6 @@ exports.submit = async (req, res) => {
         })
 
         let newPet = {
-            _id: new ObjectId(id),
             date: new Date(),
             userid: new ObjectId(req.session.userid),
             age: xss(req.body.age),
