@@ -45,10 +45,7 @@ body {
 main {
     width: 80%;
     margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 5em);
+    padding-bottom: 5em;
 }
 
 @import 'header', 'forms', 'comment', 'result-list', 'result-page', 'error', 'favorites', 'login', 'profile';
