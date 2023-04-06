@@ -10,7 +10,7 @@
 <main>
     <div class="results">
         <% resultPet.forEach((pet) => { %>
-        <div class="info"><img class="petpicture" src="<%= pet.images[0] %>" alt="photo of a pet" />
+        <div class="info"><img class="petpicture" data-src="<%= pet.images[0] %>" loading="lazy" alt="photo of a pet" />
             <div>
                 <h2><%= pet.name %></h2>
                 <h2><%= pet.age %></h2>
@@ -27,5 +27,8 @@
         <a href="http://localhost:4000/"><button>Retake!</button></a>
     </div>
 </main>
+
+    <script src="/static/intersectionObv.js"></script>
+
 </body>
 </html>
