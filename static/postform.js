@@ -4,6 +4,8 @@ const imageList = document.querySelector('.image-list')
 
 let images = []
 
+uploadInput.style.color = 'transparent'
+
 uploadInput.addEventListener('change', () => {
 
 	if(uploadInput.files.length == 0) {

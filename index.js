@@ -6,7 +6,6 @@ require('dotenv').config()
 // import express application 
 const express = require('express')
 const session = require('express-session')
-const ObjectId = require('mongodb').ObjectId
 
 const app = express()
 
@@ -14,23 +13,20 @@ const app = express()
 const port = 4000
 
 // connecting mongoDB account with database 
-const {
-    MongoClient,
-    ServerApiVersion
-} = require('mongodb');
+const { MongoClient, ServerApiVersion } = require('mongodb')
 const uri = process.env.MONGODB_URI
 const client = new MongoClient(uri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    serverApi: ServerApiVersion.v1
+	useNewUrlParser: true,
+	useUnifiedTopology: true,
+	serverApi: ServerApiVersion.v1
 })
 const dbName = 'testdatab'
 
 // connecting a specific datbase with the collection form
 client.connect(err => {
-    // when the connection fails, show error
-    console.log('error')
-});
+	// when the connection fails, show error
+	console.log(err)
+})
 
 app.set('database', client.db(dbName)) //https://stackoverflow.com/a/25670767
 
@@ -40,7 +36,7 @@ app.set('view engine', 'ejs')
 
 // express middleware to help with HTTP requests for node.js
 app.use(express.urlencoded({
-    extended: true
+	extended: true
 }))
 
 // express uses the map static to 
@@ -51,15 +47,15 @@ app.set('views', 'view')
 
 // het maken van een sessie met een secret code
 app.use(session({
-    secret: process.env.SESCODE, // geheime code om de sessie te versleutelen
-    resave: false, // zorgt ervoor dat de sessie niet telkens opnieuw wordt opgeslagen als er geen wijzigingen zijn
-    saveUninitialized: true // slaat een sessie op, zelfs als er geen gegevens zijn opgeslagen
+	secret: process.env.SESCODE, // geheime code om de sessie te versleutelen
+	resave: false, // zorgt ervoor dat de sessie niet telkens opnieuw wordt opgeslagen als er geen wijzigingen zijn
+	saveUninitialized: true // slaat een sessie op, zelfs als er geen gegevens zijn opgeslagen
 }))
 
 // all pages
 // home
 app.get('/', function (req, res) {
-        res.render('index')
+	res.render('index')
 })
 
 // routes
@@ -86,10 +82,10 @@ app.use('/profile', require('./routes/profile.js'))
 
 // 4000 shows in the console to let know it works
 app.listen(port, () => {
-    console.log(`Server listening on port ${port}`)
+	console.log(`Server listening on port ${port}`)
 })
 
 // when an user is calling an unknow url, an error occurs
-app.use(function (req, res, next) {
-    res.status(404).render('404page')
+app.use(function (req, res) {
+	res.status(404).render('404page')
 })

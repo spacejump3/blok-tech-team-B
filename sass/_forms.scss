@@ -1,0 +1,204 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    label {
+        font-size: 1.2em;
+        color: black;
+        font-family: "Recky";
+        text-transform: uppercase;
+        margin-bottom: .3em;
+        cursor: pointer;
+    }
+
+    input,
+    select {
+        color: var(--accent-color);
+        font-family: var(--font-family);
+        background-color: white;
+        padding: .5em;
+        margin-bottom: 2em;
+        font-size: 1em;
+        border-radius: .25em;
+        border: none;
+        width: 100%;
+        max-width: 30em;
+        cursor: pointer;
+
+        &::placeholder {
+            color: var(--accent-color);
+        }
+    }
+
+    ul {
+        list-style: none;
+        margin-bottom: 2em;
+        width: 100%;
+    }
+
+    li {
+        display: flex;
+        gap: 1ch;
+        align-items: center;
+        justify-content: start;
+
+        input {
+            margin-bottom: 0;
+            width: auto
+        }
+
+        label {
+            font-family: var(--font-family);
+            text-transform: none;
+            color: var(--accent-color);
+            font-size: 1em;
+        }
+    }
+
+    input[type="submit"] {
+        background-color: var(--accent-color);
+        color: white;
+        font-family: "Recky";
+        padding: .5em;
+        font-size: 1em;
+        margin-top: 1em;
+        border-radius: .25em;
+        text-transform: uppercase;
+        cursor: pointer;
+        border: none;
+        font-size: 1.2em;
+    }
+}
+
+.comment-form {
+    textarea {
+        padding: .5em;
+        font-size: 1em;
+        margin-bottom: 1em;
+        width: 100%;
+        resize: none;
+        border: none;
+        border-radius: .25em;
+        font-family: var(--font-family);
+
+        &::placeholder {
+            color: var(--accent-color);
+        }
+    }
+}
+
+.login,
+.register {
+    form {
+        height: 50%;
+        width: 80%;
+
+        display: flex;
+        flex-direction: column;
+
+        label {
+            color: white;
+        }
+    }
+}
+
+.profiel {
+    form {
+        width: 75%;
+
+    }
+}
+
+/* File Input */
+.file-input {
+    width: 100%;
+}
+
+.image-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12em, 16em));
+    gap: 1em;
+}
+
+.image-list img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: .5em;
+    margin-bottom: 1em;
+}
+
+.image-list .upload-image-container {
+    position: relative;
+}
+
+.image-list button {
+    position: absolute;
+    background-color: white;
+    color: var(--text-color);
+    border-radius: 100%;
+    width: 2em;
+    height: 2em;
+    top: .5em;
+    right: .5em;
+    font-size: 1em;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    padding: 0;
+}
+
+input[type="file"] {
+    background-color: transparent;
+    padding: 0;
+}
+
+input[type="file"]::file-selector-button {
+    background-color: var(--accent-color);
+    color: white;
+    font-family: "Recky";
+    padding: .5em;
+    font-size: 1em;
+    border-radius: .25em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    font-size: 1.2em;
+}
+
+
+/* submit button loading */
+.post-form {
+
+    button[type="submit"]:after {
+        content: '✓';
+        margin-left: 1ch;
+    }
+
+    button[type="submit"].loading {
+        background-color: grey;
+    }
+
+    button[type="submit"].loading:after {
+        content: '';
+        display: inline-block;
+        height: 1em;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        border-style: solid;
+        border-color: var(--accent-color) transparent;
+        border-width: 3px;
+        animation: rotate 2s linear infinite;
+    }
+}
+
+@keyframes rotate {
+    from {
+        rotate: 0deg;
+    }
+
+    to {
+        rotate: 360deg;
+    }
+}

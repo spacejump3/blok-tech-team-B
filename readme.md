@@ -1,31 +1,44 @@
 # PawfectMatch 🐾
-## Tabel of contents
+## Inhoudsopgave
 * 💡Concept
-* 👾Installation
-* 📝License
-* 🕸️Sources
+* 👾Installatie
+* 📝Licentie
+* 🕸️Bronnen
 
 ## 💡Concept
-This is a repository for my project thath I'm working on for school. I'm focussing on making a **feature**  that matches the preferences from the user to a pet that's up for adoption. With the aid of front-end and back-end I'm making this happen. For further information I suggest you check out my [Wiki!](https://github.com/lucaoudejans/projecttech/wiki)
+Onze webapplicatie zorgt ervoor dat jij de perfecte dierenvriend kan vinden/uploaden!
+Registreer, log in, beantwoordt vragen, comment, like, upload en vind een perfecte match voor jou! 
 
-## 👾Installation 
-In order to try and use my feature locally, you can clone my repository by these steps:
+Wil je meer weten over onze applicatie en ons proces, lees dan onze [Wiki!](https://github.com/spacejump3/blok-tech-team-B/wiki)
+
+## 👾Installatie 
+Om onze applicatie lokaal te draaien kan je de volgende stappen volgen:
 
 ### Install Git
-* Make sure **[Git](https://github.com/git-guides/install-git)** is working on your computer
-* Check if Git is correctly installed by running `$git version` in your terminal
+* Zorg dat **[Git](https://github.com/git-guides/install-git)** op jouw computer werkt.
+* Je kan checken of git is geïnstalleerd door `git version` te typen in je terminal.
 
-### Clone my repository
-* Run in your terminal `$git clone https://github.com/lucaoudejans/projecttech.git`
+### Clone deze repository
+* Gebruik `git clone https://github.com/spacejump3/blok-tech-team-B.git` in de terminal om onze code te clonen.
 
-### Install packages
-* Install the package **[npm](https://npmjs.com/)** by running `$npm install` in your terminal
-* Start the project with `$npm start`
+### Installeer NodeJS modules
+* Installeer de benodigde NodeJS modules met **[npm](https://npmjs.com/)** door `npm install` in je terminal uit te voeren in de folder die je net gecloned hebt.
 
-## 📝License
-This project is licensed under a **[MIT](https://github.com/lucaoudejans/projecttech/blob/main/LICENSE)** License. Copyright © 2023 Luca Oudejans
+### Maak een .env bestand
+* Maak in de root van de applicatie een .env bestand aan en vul daarin je database url in en een session token. Hieronder staat een template. De mongoDB url kan je vinden op door in mongo atlas op 'connect' te klikken en naar 'connect your application' te gaan. De session token is een soort wachtwoord, die kan je zelf bepalen.
 
-## 🕸️Sources
+```
+MONGODB_URI= #voeg hier jouw mongoDB url in.
+SESCODE= #voeg hier jouw session token in
+```
+
+### Start de app
+* Start de applicatie door `npm start` uit te voeren in de terminal.
+
+## 📝Licentie
+Dit project is gelicenseerd onder een **[MIT](https://github.com/lucaoudejans/projecttech/blob/main/LICENSE)** License. Copyright © 2023 Luca Oudejans
+
+## 🕸️Bronnen
 * [School repository](https://github.com/cmda-bt)
 * [My github](https://github.com/lucaoudejans/projecttech)
 * [Download Git](https://github.com/git-guides/install-git)
