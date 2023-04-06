@@ -7,7 +7,8 @@
     "watch:sass": "sass --watch sass/:static/",
     "watch": "npm-run-all --parallel watch:*",
     "start": "npm-run-all --parallel watch run",
-    "run": "nodemon server.js"
+    "run": "nodemon server.js",
+    "lint": "eslint"
   },
   "repository": {
     "type": "git",
@@ -36,6 +37,10 @@
     "xss": "^1.0.14"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "eslint": "^8.37.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "nodemon": "^2.0.20",
+    "prettier": "2.8.7"
   }
 }
