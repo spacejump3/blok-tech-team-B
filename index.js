@@ -6,8 +6,11 @@ require('dotenv').config()
 // import express application 
 const express = require('express')
 const session = require('express-session')
+<<<<<<< HEAD
 // import gzip
 const compression = require('compression')
+=======
+>>>>>>> refs/remotes/origin/fixes
 
 const app = express()
 
