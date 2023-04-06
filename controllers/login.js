@@ -7,8 +7,8 @@ exports.inlogPagina = (req, res) => {
 
 exports.inloggen = async (req, res) => {
     try {
-        const email_filled = req.body.email.toLowerCase()
-        const password_filled = req.body.wachtwoord
+        const emailFilled = req.body.email.toLowerCase()
+        const passwordFilled = req.body.wachtwoord
 
         // ingevulde wachtwoord moet overeenkomen met de hash
         // Controleert of beide voorwaardes voldoen om verder in te loggen
@@ -16,13 +16,13 @@ exports.inloggen = async (req, res) => {
             .get('database')
             .collection('users')
             .findOne({
-                email: email_filled
+                email: emailFilled
             })
 
         if (userValidation) {
             // Vergelijk het ingevoerde wachtwoord met het gehashte wachtwoord uit de database
             const isMatch = await bcrypt.compare(
-                password_filled,
+                passwordFilled,
                 userValidation.password
             )
 
