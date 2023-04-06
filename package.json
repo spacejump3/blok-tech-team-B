@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch:sass": "sass --watch sass/:static/",
+    "watch:sass": "sass --watch --style=compressed sass/:static/",
     "watch": "npm-run-all --parallel watch:*",
     "start": "npm-run-all --parallel watch run",
     "run": "nodemon server.js"
