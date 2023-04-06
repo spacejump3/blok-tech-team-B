@@ -1,3 +1,5 @@
+@import 'header', 'forms', 'comment', 'result-list', 'result-page', 'error', 'favorites', 'login', 'profile';
+
 /* fonts */
 @import url('https://fonts.cdnfonts.com/css/yusei-magic');
 
@@ -86,7 +88,7 @@ main.index {
     align-items: center;
 }
 
-@import 'header', 'forms', 'comment', 'result-list', 'result-page', 'error', 'favorites', 'login', 'profile';
+
 
 section:nth-of-type(1) {
     display: flex;
