@@ -1,36 +1,63 @@
 <!DOCTYPE html>
 <html lang="nl">
-    
-<%- include ('../view/partials/head') %>
-
-<body>
-<%- include ('../view/partials/header') %>
-
-<!-- het dier wordt weergegevn wat er bij past -->
-<main>
-    <% if (favorites < 1) { %>
-        <h2 class="zerostateFavoritesText">No pets have been saved yet! Click the button below to add favorites</h2>
-    <% } else { %>
-        <h2 class="zerostateFavoritesText">Here are your saved pets!</h2>
-    <% } %>
-    <div class="results">
-        <% favorites.forEach((favorite) => { %>
-            <div class="info"><img class="petpicture" src=" <%= favorite.images[0] %>" alt="photo of a pet" />
-               <div><h2><%= favorite.name %></h2>
-                    <h2><%= favorite.age %></h2>
-                    <h2><%= favorite.soort %></h2>
-                    <h2><%= favorite.trait %></h2>
-                    <form class="favoriteForm" method="post" action="/removelike">
-                        <input type="hidden" name="favoritename" value="<%= favorite.name %>">
-                        <button class="unlikeBtn" name="favorite" type="submit" value="<%= favorite._id %>">Remove</button>
-                        <a href="/result/<%= favorite._id %>">More info</a>
-                    </form>
+    <%- include ('../view/partials/head') %>
+    <body>
+        <%- include ('../view/partials/header') %>
+        <!-- het dier wordt weergegevn wat er bij past -->
+        <main>
+            <% if (favorites < 1) { %>
+            <h2 class="zerostateFavoritesText">
+                No pets have been saved yet! Click the button below to add
+                favorites
+            </h2>
+            <% } else { %>
+            <h2 class="zerostateFavoritesText">Here are your saved pets!</h2>
+            <% } %>
+            <div class="results">
+                <% favorites.forEach((favorite) => { %>
+                <div class="info">
+                    <img
+                        class="petPicture"
+                        src=" <%= favorite.images[0] %>"
+                        alt="photo of a pet"
+                    />
+                    <div>
+                        <ul class="infoList">
+                            <li><%= favorite.name %></li>
+                            <li><%= favorite.age %></li>
+                            <li><%= favorite.soort %></li>
+                            <li><%= favorite.trait %></li>
+                        </ul>
+                        <form
+                            class="favoriteForm"
+                            method="post"
+                            action="/removelike"
+                        >
+                            <input
+                                type="hidden"
+                                name="favoritename"
+                                value="<%= favorite.name %>"
+                            />
+                            <button
+                                name="favorite"
+                                type="submit"
+                                value="<%= favorite._id %>"
+                            >
+                                Remove
+                            </button>
+                            <a
+                                class="anchorButton"
+                                href="/result/<%= favorite._id %>"
+                                >More info</a
+                            >
+                        </form>
+                    </div>
                 </div>
+                <% }) %>
+                <a href="http://localhost:4000/"
+                    ><button>Add favorites</button></a
+                >
             </div>
-        <% }) %>
-        <a href="http://localhost:4000/"><button>Add favorites</button></a>
-    </div>
-    </main>
-
-</body>
+        </main>
+    </body>
 </html>

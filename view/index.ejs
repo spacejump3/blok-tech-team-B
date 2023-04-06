@@ -1,70 +1,89 @@
 <!DOCTYPE html>
 <html lang="nl">
-<%- include ('../view/partials/head') %>
-
-<body>
-<%- include ('../view/partials/header') %>
-
-<main class="index">
-	<form action="result" method="post">
-
-		<section>
-			<h1>Find your perfect adoptable match!</h1>
-		</section>    
-
-		<label>I'm looking for a...</label>
-		<ul>
-			<li>
-				<input type="radio" name ="species" id="cat" value="cat">
-				<label for="cat">Cat</label>
-			</li>
-
-			<li>
-				<input type="radio" name ="species" id="dog" value="dog">
-				<label for="dog">Dog</label>
-			</li>
-
-			<li>
-				<input type="radio" name ="species" id="bunny" value="bunny">
-				<label for="bunny">Bunny</label>
-			</li>
-		</ul>
-
-		<label>The age must be...</label>
-		<ul>
-			<li>
-				<input type="radio" name="age" id="0-2" value="0-2"/>
-				<label for="0-2">0 to 2 years</label>
-			</li>
-
-			<li>
-				<input type="radio" name="age"  id="2-5" value="2-5"/>
-				<label for="2-5">2 to 5+ years</label>
-			</li>
-		</ul>
-
-		<label>I want the pet to be...</label>
-		<small>(multiple answers are possible)</small>
-		<ul>
-			<li>
-				<input type="checkbox" name="trait" id="inquisitive" value="inquisitive"/>
-				<label for="inquisitive">inquisitive</label>
-			</li>
-			<li>
-				<input type="checkbox" name="trait" id="playful" value="playful"/>
-				<label for="playful">playful</label>
-			</li>
-
-			<li>
-				<input type="checkbox" name="trait" id="friendly" value="friendly"/>
-				<label for="friendly">friendly</label>
-			</li>
-		</ul>
-
-		<button type="submit" id="submit" name="submit">see my PawfectMatch!</button>
-
-
-	</form>    
-	</main>
-</body>
+    <%- include ('../view/partials/head') %>
+    <body>
+        <%- include ('../view/partials/header') %>
+        <main class="index">
+            <form action="result" method="post">
+                <section>
+                    <h1>Find your perfect adoptable match!</h1>
+                </section>
+                <label>I'm looking for a...</label>
+                <ul>
+                    <li>
+                        <input
+                            type="radio"
+                            name="species"
+                            id="cat"
+                            value="cat"
+                        />
+                        <label for="cat">Cat</label>
+                    </li>
+                    <li>
+                        <input
+                            type="radio"
+                            name="species"
+                            id="dog"
+                            value="dog"
+                        />
+                        <label for="dog">Dog</label>
+                    </li>
+                    <li>
+                        <input
+                            type="radio"
+                            name="species"
+                            id="bunny"
+                            value="bunny"
+                        />
+                        <label for="bunny">Bunny</label>
+                    </li>
+                </ul>
+                <label>The age must be...</label>
+                <ul>
+                    <li>
+                        <input type="radio" name="age" id="0-2" value="0-2" />
+                        <label for="0-2">0 to 2 years</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="age" id="2-5" value="2-5" />
+                        <label for="2-5">2 to 5+ years</label>
+                    </li>
+                </ul>
+                <label>I want the pet to be...</label>
+                <small>(multiple answers are possible)</small>
+                <ul>
+                    <li>
+                        <input
+                            type="checkbox"
+                            name="trait"
+                            id="inquisitive"
+                            value="inquisitive"
+                        />
+                        <label for="inquisitive">inquisitive</label>
+                    </li>
+                    <li>
+                        <input
+                            type="checkbox"
+                            name="trait"
+                            id="playful"
+                            value="playful"
+                        />
+                        <label for="playful">playful</label>
+                    </li>
+                    <li>
+                        <input
+                            type="checkbox"
+                            name="trait"
+                            id="friendly"
+                            value="friendly"
+                        />
+                        <label for="friendly">friendly</label>
+                    </li>
+                </ul>
+                <button type="submit" id="submit" name="submit">
+                    see my PawfectMatch!
+                </button>
+            </form>
+        </main>
+    </body>
 </html>

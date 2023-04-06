@@ -1,28 +1,23 @@
 <!DOCTYPE html>
 <html lang="nl">
-
 <%- include ('../view/partials/head') %>
-
 <body>
 <%- include ('../view/partials/header') %>
-
 <main>
-    <h2 class="single-pet-heading"><%= resultPet.name %></h2>
-    <ul class="single-pet-ul">
-      <li class="single-pet-picture"></li>
+    <h2 class="singlePetHeading"><%= resultPet.name %></h2>
+    <ul class="singlePetUl">
+      <li class="singlePetPicture"></li>
           <% resultPet.images.forEach(image => { %>
           <img src="../<%= image %>" alt="photo of a pet" /> 
           <% }) %>
       </li>
     </ul>
-   
-    <form class="comment-form" method="post" action="/result/postcomment">
+    <form class="commentForm" method="post" action="/result/postcomment">
         <label for="comment">Comment</label>
         <textarea name="comment" id="comment" rows="2" placeholder="Leave a comment!"></textarea>
         <button type="submit">submit comment</button>
         <input type="hidden" name="petId" value="<%= resultPet._id %>">
     </form>
-
     <% sortedComments.forEach((comment) => { %>
         <div class="comment">
             <h2><%= comment.username %></h2>
@@ -61,7 +56,6 @@
                 %>
         </div>
       <% }) %>
-
 </main>
 </body>
 </html>

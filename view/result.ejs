@@ -1,31 +1,55 @@
 <!DOCTYPE html>
 <html lang="nl">
-    
-<%- include ('../view/partials/head') %>
-
-<body>
-<%- include ('../view/partials/header') %>
-
-<!-- het dier wordt weergegevn wat er bij past -->
-<main>
-    <div class="results">
-        <% resultPet.forEach((pet) => { %>
-        <div class="info"><img class="petpicture" src="<%= pet.images[0] %>" alt="photo of a pet" />
-            <div>
-                <h2><%= pet.name %></h2>
-                <h2><%= pet.age %></h2>
-                <h2><%= pet.soort %></h2>
-                <h2><%= pet.trait %></h2>
-                <form class="favoriteForm" method="post" action="/liked">
-                    <input type="hidden" name="petname" value="<%= pet.name %>">
-                    <button class="likeBtn" name="favorite" type="submit" value="<%= pet._id %>">Favorite</button>
-                    <a class="anchor-button" href="/result/<%= pet._id %>">More info</a>
-                </form> 
+    <%- include ('../view/partials/head') %>
+    <body>
+        <%- include ('../view/partials/header') %>
+        <!-- het dier wordt weergegevn wat er bij past -->
+        <main>
+            <div class="results">
+                <% resultPet.forEach((pet) => { %>
+                <div class="info">
+                    <img
+                        class="petPicture"
+                        data-src="<%= pet.images[0] %>"
+                        loading="lazy"
+                        alt="photo of a pet"
+                    />
+                    <div>
+                        <ul class="infoList">
+                            <li><%= pet.name %></li>
+                            <li><%= pet.age %></li>
+                            <li><%= pet.soort %></li>
+                            <li><%= pet.trait %></li>
+                        </ul>
+                        <form
+                            class="favoriteForm"
+                            method="post"
+                            action="/liked"
+                        >
+                            <input
+                                type="hidden"
+                                name="petname"
+                                value="<%= pet.name %>"
+                            />
+                            <button
+                                name="favorite"
+                                type="submit"
+                                value="<%= pet._id %>"
+                            >
+                                Favorite
+                            </button>
+                            <a
+                                class="anchorButton"
+                                href="/result/<%= pet._id %>"
+                                >More info</a
+                            >
+                        </form>
+                    </div>
+                </div>
+                <% }) %>
+                <a href="http://localhost:4000/"><button>Retake!</button></a>
             </div>
-        </div>
-        <% }) %>
-        <a href="http://localhost:4000/"><button>Retake!</button></a>
-    </div>
-</main>
-</body>
+        </main>
+        <script src="/static/intersectionObv.js"></script>
+    </body>
 </html>

@@ -1,3 +1,5 @@
+@import 'header', 'forms', 'comment', 'result-list', 'result-page', 'error', 'favorites', 'login', 'profile';
+
 /* fonts */
 @import url('https://fonts.cdnfonts.com/css/yusei-magic');
 
@@ -20,9 +22,10 @@
 
 a {
     text-decoration: none;
-    a:visited {
-        color: white;
-    }
+}
+
+a:visited {
+    color: #ffffff;
 }
 
 h1,
@@ -85,7 +88,7 @@ main.index {
     align-items: center;
 }
 
-@import 'header', 'forms', 'comment', 'result-list', 'result-page', 'error', 'favorites', 'login', 'profile';
+
 
 section:nth-of-type(1) {
     display: flex;

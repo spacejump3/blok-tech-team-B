@@ -4,9 +4,9 @@ form {
     align-items: start;
 
     label {
-        margin-bottom: .3em;
+        margin-bottom: 0.3em;
 
-        font-family: "Recky";
+        font-family: 'Recky';
         font-size: 1.2em;
         text-transform: uppercase;
 
@@ -17,10 +17,10 @@ form {
 
     input,
     select {
-        padding: .5em;
+        padding: 0.5em;
         margin-bottom: 2em;
         border: none;
-        border-radius: .25em;
+        border-radius: 0.25em;
         width: 100%;
         max-width: 30em;
 
@@ -52,7 +52,7 @@ form {
 
         input {
             margin-bottom: 0;
-            width: auto
+            width: auto;
         }
 
         label {
@@ -64,13 +64,13 @@ form {
         }
     }
 
-    input[type="submit"] {
+    input[type='submit'] {
         margin-top: 1em;
-        padding: .5em;
+        padding: 0.5em;
         border: none;
-        border-radius: .25em;
+        border-radius: 0.25em;
 
-        font-family: "Recky";
+        font-family: 'Recky';
         font-size: 1.2em;
         text-transform: uppercase;
 
@@ -81,19 +81,19 @@ form {
     }
 }
 
-.comment-form {
+.commentForm {
     textarea {
         margin-bottom: 1em;
-        padding: .5em;
+        padding: 0.5em;
         border: none;
-        border-radius: .25em;
+        border-radius: 0.25em;
         width: 100%;
 
         resize: none;
 
         font-family: var(--font-family);
         font-size: 1em;
-        
+
         &::placeholder {
             color: var(--accent-color);
         }
@@ -122,7 +122,7 @@ form {
 }
 
 /* File Input */
-.file-input {
+.fileInput {
     width: 100%;
 }
 
@@ -134,7 +134,7 @@ form {
 
 .image-list img {
     margin-bottom: 1em;
-    border-radius: .5em;
+    border-radius: 0.5em;
     width: 100%;
 
     aspect-ratio: 1/1;
@@ -152,8 +152,8 @@ form {
     height: 2em;
 
     position: absolute;
-    top: .5em;
-    right: .5em;
+    top: 0.5em;
+    right: 0.5em;
 
     display: grid;
     justify-content: center;
@@ -165,46 +165,46 @@ form {
     color: var(--text-color);
 }
 
-input[type="file"] {
+input[type='file'] {
     padding: 0;
     background-color: transparent;
 }
 
-input[type="file"]::file-selector-button {
-    padding: .5em;
-    color: #ffffff;
-    background-color: var(--accent-color);
+input[type='file']::file-selector-button {
+    padding: 0.5em;
+    border: none;
+    border-radius: 0.25em;
 
-    font-family: "Recky";
+    font-family: 'Recky';
     font-size: 1.2em;
     text-transform: uppercase;
 
-    border: none;
-    border-radius: .25em;
+    color: #ffffff;
+    background-color: var(--accent-color);
 
     cursor: pointer;
 }
 
 /* submit button loading */
-.post-form {
-
-    button[type="submit"]:after {
+.postForm {
+    button[type='submit']:after {
         margin-left: 1ch;
         content: '✓';
     }
 
-    button[type="submit"].loading {
+    button[type='submit'].loading {
         background-color: #808080;
     }
 
-    button[type="submit"].loading:after {
+    button[type='submit'].loading:after {
         border-radius: 50%;
+        border-width: 0.1875em;
         border-style: solid;
         border-color: var(--accent-color) transparent;
-        border-width: 3px;
+        height: 1em;
 
         display: inline-block;
-        height: 1em;
+
         aspect-ratio: 1/1;
 
         content: '';
