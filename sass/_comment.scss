@@ -1,13 +1,14 @@
 .comment {
-    background-color: var(--header-color);
     margin: 1em 0 1em 0;
     padding: 1em;
     border-radius: .5em;
+
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
     gap: .5em;
-    // box-shadow: 0 .3em var(--accent-color);
+
+    background-color: var(--header-color);
 
     h2 {
         color: var(--accent-color);
@@ -15,11 +16,13 @@
 
     p {
         font-family: 'Yusei Magic', sans-serif;
+
         flex: 50%;
     }
 
     p:nth-of-type(1) {
         font-size: .9em;
+        
         color: #0006;
     }
 }
