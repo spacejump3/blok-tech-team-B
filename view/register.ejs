@@ -1,31 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <%- include ('../view/partials/head') %>
-
     <body class="register">
-    <%- include ('../view/partials/header') %>
-    
-    <main>
-        <div>
-            <section>
-                <h1>PAWFECT MATCH</h1>
-                <h2>MAKE YOUR ACCOUNT</h2>
-            </section>
-            <form method="post" action="/register/submit">
-                <label for="id">username</label>
-                <input required type="text" value="" id="id" name="username" placeholder="Fill in your username here">
-
-                <label for="id">e-mail</label>
-                <input required type="mail" value="" id="id" name="email" placeholder="Fill in your mail here">
-
-                <label for="id">password</label>
-                <input required type="password" value="" id="id" name="wachtwoord" placeholder="Fill in your password here">
-
-                <input type="submit" value="register">
-            </form>
-            <p>Do you already have an account?<a href="/login"><b> Log in</b></a></p>
-        </div>
-    </main>
-</body>
+        <%- include ('../view/partials/header') %>
+        <main>
+            <div>
+                <section>
+                    <h1>PAWFECT MATCH</h1>
+                    <h2>MAKE YOUR ACCOUNT</h2>
+                </section>
+                <form method="post" action="/register/submit">
+                    <label for="username">username</label>
+                    <input
+                        required
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Fill in your username here"
+                    />
+                    <label for="email">e-mail</label>
+                    <input
+                        required
+                        type="mail"
+                        id="email"
+                        name="email"
+                        placeholder="Fill in your mail here"
+                    />
+                    <label for="password">password</label>
+                    <input
+                        required
+                        type="password"
+                        id="password"
+                        name="wachtwoord"
+                        placeholder="Fill in your password here"
+                    />
+                    <input type="submit" value="register" />
+                </form>
+                <p>
+                    Do you already have an account?<a href="/login"> Log in</a>
+                </p>
+            </div>
+        </main>
+    </body>
 </html>

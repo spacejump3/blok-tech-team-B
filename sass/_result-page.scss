@@ -1,25 +1,25 @@
-.single-pet-heading {
+.singlePetHeading {
+    margin: 0.3em 0 0.3em 0;
+
     font-family: Recky;
     font-size: 5em;
-    text-align: center;
-    color: var(--accent-color);
     font-weight: 100;
-    margin: .3em 0 .3em 0;
+    text-align: center;
+
+    color: var(--accent-color);
 }
 
-.single-pet-ul {
-    // background-color: red;
+.singlePetUl {
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
+    align-items: center;
 
     img {
+        margin: 0 0.5em 0 0.5em;
+        border-radius: 0.5em;
         width: 20em;
         height: 100%;
-        margin: 0 .5em 0 .5em;
-        border-radius: .5em;
-        box-shadow: .3em .3em .8em #0001;
+        box-shadow: 0.3em 0.3em 0.8em #0001;
     }
 }
-

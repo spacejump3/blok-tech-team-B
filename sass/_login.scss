@@ -1,32 +1,36 @@
 .login {
     main {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
+        width: 100%;
         height: calc(100vh - var(--header-height));
-        overflow-y: hidden;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
         background-image: url(../static/images/katbg.png);
         background-position: left top;
         background-repeat: no-repeat;
         background-size: cover;
-        width: 100%;
+
+        overflow-y: hidden;
     }
 }
 
 .register {
     main {
+        width: 100%;
+        height: calc(100vh - var(--header-height));
+
         display: flex;
         align-items: center;
         justify-content: center;
 
-        height: calc(100vh - var(--header-height));
-        overflow-y: hidden;
         background-image: url(../static/images/dogbg1.jpg);
         background-position: right bottom;
         background-repeat: no-repeat;
         background-size: cover;
-        width: 100%;
+
+        overflow-y: hidden;
     }
 }
 
@@ -40,24 +44,27 @@
 
     main div:first-of-type section {
         display: flex;
-        align-items: center;
         flex-direction: column;
+        align-items: center;
     }
 
-    main div:first-of-type section>h1 {
+    main div:first-of-type section > h1 {
         font-size: 3.3em;
+
         color: #e0815e;
     }
 
-    main div:first-of-type section>h2 {
-        font-size: 2.8em;
-        font-family: "Recky", sans-serif;
-        color: white;
+    main div:first-of-type section > h2 {
         margin-bottom: 1em;
+
+        font-family: 'Recky', sans-serif;
+        font-size: 2.8em;
+
+        color: #ffffff;
     }
 
     main div:first-of-type p {
-        color: white;
+        color: #ffffff;
     }
 
     main div:first-of-type p {
@@ -65,12 +72,7 @@
     }
 
     main div:first-of-type p,
-    main div:first-of-type p>a {
+    main div:first-of-type p > a {
         font-family: var(--font-family);
     }
-
-
-
-
 }
-

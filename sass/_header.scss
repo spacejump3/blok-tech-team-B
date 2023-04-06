@@ -1,42 +1,50 @@
 /* header styling */
 header {
+    height: var(--header-height);
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     background-color: var(--header-color);
-    height: var(--header-height);
 
     h1 {
-        font-family: "Recky", sans-serif;
-        text-transform: uppercase;
-        color: #e0815e;
-        font-size: 3em;
         margin-left: .5em;
+
+        font-family: "Recky", sans-serif;
+        font-size: 3em;
+        text-transform: uppercase;
+
+        color: #e0815e;
     }
 }
 
 nav {
-
+    
     ul {
-        font-family: "Recky";
         display: flex;
+
+        font-family: "Recky";
     }
 
     li {
+        margin: 0 .3em;
+        padding: .5em;
+        border-radius: .8em;
+        box-shadow: 0 .25em 1em #3f3f3f1a;
+
         display: flex;
         align-items: flex-end;
-        font-size: 1.2em;
-        padding: .5em;
-        border-radius: 15px;
-        background-color: #fef2ca;
-        color: #e0815e;
-        margin: 0 .3em;
-        text-transform: uppercase;
-        box-shadow: 0px 4px 16px rgba(63, 63, 63, 0.1);
-    }
 
-    li img {
-        margin-right: .5em;
+        font-size: 1.2em;
+        text-transform: uppercase;
+
+        color: #e0815e;
+        background-color: #fef2ca;
+
+        img {
+            margin-right: .5em; 
+        }
     }
 
     a:last-of-type li {

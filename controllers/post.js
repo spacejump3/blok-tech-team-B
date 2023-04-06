@@ -1,5 +1,8 @@
 const xss = require('xss')
 const ObjectId = require('mongodb').ObjectId
+const sharp = require('sharp')
+const path = require('path')
+const fs = require('fs')
 
 exports.postForm = async (req, res) => {
 
@@ -12,19 +15,30 @@ exports.postForm = async (req, res) => {
 }
 
 exports.submit = async (req, res) => {
+
 	try {
 
 		let images = []
 
-		req.files.forEach((file) => {
-			images.push(file.path)
-		})
+		for(let file of req.files) {
+			const filename = `${file.destination}${new Date().getTime()}${file.originalname.split('.')[0]}.webp`
+			const { filename: image } = file
+
+			const resizedImage = await sharp(file.path)
+				.resize({ width: 300, height: 300 })
+				.webp()
+				.toFile(filename)
+				.then()
+				.catch(err => console.log(error))
+			fs.unlinkSync(file.path)
+			images.push(filename)
+		}
 
 		let traits = []
 
-		req.body.trait.forEach((trait) => {
+		for(let trait of req.body.trait) {
 			traits.push(xss(trait))
-		})
+		}
 
 		let newPet = {
 			date: new Date(),

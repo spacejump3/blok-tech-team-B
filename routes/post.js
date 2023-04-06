@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 const multer = require('multer')
+const sharp = require('sharp')
 
 const storage = multer.diskStorage({
 	destination: (req, file, callback) => {
@@ -9,7 +10,7 @@ const storage = multer.diskStorage({
 		callback(null, 'static/upload/')
 	},
 	filename: (req, file, callback) => {
-		callback(null, `${new Date().getTime()}${file.originalname}`)
+		callback(null, file.originalname)
 	}
 })
 
