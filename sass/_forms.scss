@@ -4,26 +4,32 @@ form {
     align-items: start;
 
     label {
-        font-size: 1.2em;
-        color: black;
-        font-family: "Recky";
-        text-transform: uppercase;
         margin-bottom: .3em;
+
+        font-family: "Recky";
+        font-size: 1.2em;
+        text-transform: uppercase;
+
+        color: #000000;
+
         cursor: pointer;
     }
 
     input,
     select {
-        color: var(--accent-color);
-        font-family: var(--font-family);
-        background-color: white;
         padding: .5em;
         margin-bottom: 2em;
-        font-size: 1em;
-        border-radius: .25em;
         border: none;
+        border-radius: .25em;
         width: 100%;
         max-width: 30em;
+
+        font-family: var(--font-family);
+        font-size: 1em;
+
+        color: var(--accent-color);
+        background-color: #ffffff;
+
         cursor: pointer;
 
         &::placeholder {
@@ -32,16 +38,17 @@ form {
     }
 
     ul {
-        list-style: none;
         margin-bottom: 2em;
         width: 100%;
+
+        list-style: none;
     }
 
     li {
         display: flex;
-        gap: 1ch;
-        align-items: center;
         justify-content: start;
+        align-items: center;
+        gap: 1ch;
 
         input {
             margin-bottom: 0;
@@ -50,38 +57,43 @@ form {
 
         label {
             font-family: var(--font-family);
-            text-transform: none;
-            color: var(--accent-color);
             font-size: 1em;
+            text-transform: none;
+
+            color: var(--accent-color);
         }
     }
 
     input[type="submit"] {
-        background-color: var(--accent-color);
-        color: white;
-        font-family: "Recky";
-        padding: .5em;
-        font-size: 1em;
         margin-top: 1em;
-        border-radius: .25em;
-        text-transform: uppercase;
-        cursor: pointer;
+        padding: .5em;
         border: none;
+        border-radius: .25em;
+
+        font-family: "Recky";
         font-size: 1.2em;
+        text-transform: uppercase;
+
+        color: #ffffff;
+        background-color: var(--accent-color);
+
+        cursor: pointer;
     }
 }
 
 .comment-form {
     textarea {
-        padding: .5em;
-        font-size: 1em;
         margin-bottom: 1em;
-        width: 100%;
-        resize: none;
+        padding: .5em;
         border: none;
         border-radius: .25em;
-        font-family: var(--font-family);
+        width: 100%;
 
+        resize: none;
+
+        font-family: var(--font-family);
+        font-size: 1em;
+        
         &::placeholder {
             color: var(--accent-color);
         }
@@ -91,14 +103,14 @@ form {
 .login,
 .register {
     form {
-        height: 50%;
         width: 80%;
+        height: 50%;
 
         display: flex;
         flex-direction: column;
 
         label {
-            color: white;
+            color: #ffffff;
         }
     }
 }
@@ -106,7 +118,6 @@ form {
 .profiel {
     form {
         width: 75%;
-
     }
 }
 
@@ -122,11 +133,12 @@ form {
 }
 
 .image-list img {
+    margin-bottom: 1em;
+    border-radius: .5em;
     width: 100%;
+
     aspect-ratio: 1/1;
     object-fit: cover;
-    border-radius: .5em;
-    margin-bottom: 1em;
 }
 
 .image-list .upload-image-container {
@@ -134,61 +146,69 @@ form {
 }
 
 .image-list button {
-    position: absolute;
-    background-color: white;
-    color: var(--text-color);
+    padding: 0;
     border-radius: 100%;
     width: 2em;
     height: 2em;
+
+    position: absolute;
     top: .5em;
     right: .5em;
-    font-size: 1em;
+
     display: grid;
     justify-content: center;
     align-content: center;
-    padding: 0;
+
+    font-size: 1em;
+
+    background-color: #ffffff;
+    color: var(--text-color);
 }
 
 input[type="file"] {
-    background-color: transparent;
     padding: 0;
+    background-color: transparent;
 }
 
 input[type="file"]::file-selector-button {
-    background-color: var(--accent-color);
-    color: white;
-    font-family: "Recky";
     padding: .5em;
-    font-size: 1em;
-    border-radius: .25em;
-    text-transform: uppercase;
-    cursor: pointer;
-    border: none;
-    font-size: 1.2em;
-}
+    color: #ffffff;
+    background-color: var(--accent-color);
 
+    font-family: "Recky";
+    font-size: 1.2em;
+    text-transform: uppercase;
+
+    border: none;
+    border-radius: .25em;
+
+    cursor: pointer;
+}
 
 /* submit button loading */
 .post-form {
 
     button[type="submit"]:after {
-        content: '✓';
         margin-left: 1ch;
+        content: '✓';
     }
 
     button[type="submit"].loading {
-        background-color: grey;
+        background-color: #808080;
     }
 
     button[type="submit"].loading:after {
-        content: '';
-        display: inline-block;
-        height: 1em;
-        aspect-ratio: 1/1;
         border-radius: 50%;
         border-style: solid;
         border-color: var(--accent-color) transparent;
         border-width: 3px;
+
+        display: inline-block;
+        height: 1em;
+        aspect-ratio: 1/1;
+
+        content: '';
+
         animation: rotate 2s linear infinite;
     }
 }

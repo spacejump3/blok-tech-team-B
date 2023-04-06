@@ -1,27 +1,31 @@
+@import 'header', 'forms', 'comment', 'result-list', 'result-page', 'error', 'favorites', 'login', 'profile';
+
 /* fonts */
 @import url('https://fonts.cdnfonts.com/css/yusei-magic');
 
 @font-face {
     font-family: Recky;
     src: url("/static/Fonts/Recky.ttf") format('truetype');
-
 }
 
 /* general */
 :root {
-    --header-height: 5em;
     --background-color: #fef2ca;
     --header-color: #EECE79;
     --accent-color: #e0815e;
     --accent-color-hover: #c26442;
+
+    --header-height: 5em;
+
     --font-family: 'Yusei Magic', sans-serif;
 }
 
 a {
     text-decoration: none;
-    a:visited {
-        color: white;
-    }
+}
+
+a:visited {
+    color: #ffffff;
 }
 
 h1,
@@ -32,23 +36,50 @@ h4 {
     text-transform: uppercase;
 }
 
+h2 {
+    font-family: var(--font-family);
+    font-size: 1.3em;
+}
+
 * {
-    padding: 0;
     margin: 0;
-    list-style: none;
+    padding: 0;
     box-sizing: border-box;
+
+    list-style: none;
 }
 
 body {
     background-color: var(--background-color);
-    
 }
 
 // main styling
 main {
-    width: 80%;
     margin: auto;
     padding-bottom: 5em;
+    width: 80%;
+
+    button {
+        padding: .5em 1.5em;
+        border: none;
+        border-radius: 3em;
+    
+        display: flex;
+        align-items: flex-end;
+    
+        font-family: 'Recky', sans-serif;
+        font-size: 1.2em;
+        text-decoration: none;
+    
+        color: #ffffff;
+        background-color: var(--accent-color);
+        
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: var(--accent-color-hover);
+    }
 }
 
 main.index {
@@ -57,50 +88,30 @@ main.index {
     align-items: center;
 }
 
-@import 'header', 'forms', 'comment', 'result-list', 'result-page', 'error', 'favorites', 'login', 'profile';
 
 
 section:nth-of-type(1) {
     display: flex;
     justify-content: center;
-    height: 7em;
     align-items: center;
-    font-family: var(--font-family);
-}
 
-h2 {
+    height: 7em;
+
     font-family: var(--font-family);
-    font-size: 1.3em;
 }
 
 section:nth-of-type(2) {
+    padding: 1em;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1em;
 }
 
 small {
+    padding-bottom: 1em;
+    
     font-size: .8em;
     font-family: var(--font-family);
-    padding-bottom: 1em;
-}
-
-main button {
-    text-decoration: none;
-    color: white;
-    border: none;
-    border-radius: 3em;
-    padding: .5em 1.5em;
-    background-color: var(--accent-color);
-    font-family: 'Recky', sans-serif;
-    cursor: pointer;
-    font-size: 1.2em;
-    display: flex;
-    align-items: flex-end;
-}
-
-main button:hover {
-    background-color: var(--accent-color-hover);
 }
