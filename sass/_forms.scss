@@ -172,15 +172,15 @@ input[type="file"] {
 
 input[type="file"]::file-selector-button {
     padding: .5em;
-    color: #ffffff;
-    background-color: var(--accent-color);
+    border: none;
+    border-radius: .25em;
 
     font-family: "Recky";
     font-size: 1.2em;
     text-transform: uppercase;
 
-    border: none;
-    border-radius: .25em;
+    color: #ffffff;
+    background-color: var(--accent-color);
 
     cursor: pointer;
 }
@@ -199,12 +199,13 @@ input[type="file"]::file-selector-button {
 
     button[type="submit"].loading:after {
         border-radius: 50%;
+        border-width: .1875em;
         border-style: solid;
         border-color: var(--accent-color) transparent;
-        border-width: 3px;
+        height: 1em;
 
         display: inline-block;
-        height: 1em;
+
         aspect-ratio: 1/1;
 
         content: '';
