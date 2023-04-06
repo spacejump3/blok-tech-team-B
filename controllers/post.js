@@ -21,13 +21,15 @@ exports.submit = async (req, res) => {
 		let images = []
 
 		for(let file of req.files) {
-			const filename = `${file.destination}${new Date().getTime()}${file.originalname}`
+			const filename = `${file.destination}${new Date().getTime()}${file.originalname.split('.')[0]}.webp`
 			const { filename: image } = file
 
 			const resizedImage = await sharp(file.path)
 				.resize({ width: 300, height: 300 })
 				.webp()
 				.toFile(filename)
+				.then()
+				.catch(err => console.log(error))
 			fs.unlinkSync(file.path)
 			images.push(filename)
 		}
