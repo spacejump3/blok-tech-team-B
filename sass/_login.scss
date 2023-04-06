@@ -69,8 +69,8 @@
         font-family: var(--font-family);
     }
 
-
-
-
+    main div:first-of-type p>a {
+        font-weight: bold;
+    }
 }
 
