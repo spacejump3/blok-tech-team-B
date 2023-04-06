@@ -34,9 +34,9 @@ exports.submit = async (req, res) => {
 
 		let traits = []
 
-		req.body.trait.forEach((trait) => {
+		for(let trait of req.body.trait) {
 			traits.push(xss(trait))
-		})
+		}
 
 		let newPet = {
 			date: new Date(),
