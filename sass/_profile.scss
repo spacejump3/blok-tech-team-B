@@ -1,42 +1,46 @@
 .profiel {
     main {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    
         height: calc(100vh - var(--header-height));
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
         overflow-y: hidden;
     }
 
     main > a {
-        background-color: var(--accent-color);
-        color: white;
-        font-family: "Recky";
-        padding: .5em;
         margin-top: 1em;
-        border-radius: .5em;
-        text-transform: uppercase;
-        cursor: pointer;
+        padding: .5em;
         border: none;
+        border-radius: .5em;
+
+        font-family: "Recky";
         font-size: 1.3em;
+        text-transform: uppercase;
+
+        background-color: var(--accent-color);
+        color: #ffffff;
+
+        cursor: pointer;
     }
 
     h1 {
         font-size: 3em;
         font-weight: 400;
+
         color: #e0815e;
     }
 
     div:first-of-type {
         display: flex;
-        gap: 3em;
-        align-items: center;
         justify-content: center;
+        align-items: center;
+        gap: 3em;
     }
 
     div:first-of-type>img {
         border-radius: 10em;
     }
-
 }
