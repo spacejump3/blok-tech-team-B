@@ -1,5 +1,5 @@
 .zerostateFavoritesText {
-    margin: .5em 0 0 0;
+    margin: 0.5em 0 0 0;
 
     font-size: 1em;
     text-align: center;
@@ -8,8 +8,18 @@
 //liked.ejs page
 .favoriteLikedText {
     margin-top: 2em;
-    border-bottom: .25em solid var(--accent-color);
+    border-bottom: 0.25em solid var(--accent-color);
 
     font-size: 1.25em;
     text-align: center;
+}
+
+.infoList {
+    margin-bottom: 1em;
+
+    li {
+        font-size: 1.8em;
+        font-weight: 600;
+        font-family: var(--font-family);
+    }
 }

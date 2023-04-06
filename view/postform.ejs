@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include ('../view/partials/head') %>
-
     <body>
         <%- include ('../view/partials/header') %>
-
         <main>
             <div class="uploadform">
                 <form
@@ -16,7 +14,6 @@
                     <section>
                         <h1>Post an animal</h1>
                     </section>
-
                     <label for="name">Animal Name</label>
                     <input
                         type="text"
@@ -25,7 +22,6 @@
                         required
                         placeholder="Add the name of your animal"
                     />
-
                     <label for="images">Images</label>
                     <div class="fileInput">
                         <div class="image-list"></div>
@@ -38,14 +34,12 @@
                             required
                         />
                     </div>
-
                     <label for="age">Animal Age</label>
                     <select name="age" id="age" required>
                         <option disabled selected value="">choose...</option>
                         <option value="0-2">0-2</option>
                         <option value="2-5">2-5+</option>
                     </select>
-
                     <label for="species">Species</label>
                     <select name="species" id="species" required>
                         <option disabled selected value="">choose...</option>
@@ -53,7 +47,6 @@
                         <option value="dog">dog</option>
                         <option value="bunny">bunny</option>
                     </select>
-
                     <label>Traits</label>
                     <ul>
                         <li class="checkbox-container">
@@ -84,12 +77,10 @@
                             <label for="friendly">friendly</label>
                         </li>
                     </ul>
-
                     <button type="submit" id="submit">submit</button>
                 </form>
             </div>
         </main>
-
         <script src="/static/postform.js"></script>
     </body>
 </html>
